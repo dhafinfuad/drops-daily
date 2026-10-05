@@ -1,0 +1,67 @@
+{
+  "version": "0.4.0",
+  "activePeriodCases": [
+    {
+      "wake": "06:00",
+      "sleep": "22:00",
+      "now": "2026-10-02T21:30:00",
+      "active": true
+    },
+    {
+      "wake": "06:00",
+      "sleep": "22:00",
+      "now": "2026-10-02T23:30:00",
+      "active": false
+    },
+    {
+      "wake": "06:00",
+      "sleep": "22:00",
+      "now": "2026-10-03T05:30:00",
+      "active": false
+    },
+    {
+      "wake": "18:00",
+      "sleep": "02:00",
+      "now": "2026-10-02T23:30:00",
+      "active": true
+    },
+    {
+      "wake": "18:00",
+      "sleep": "02:00",
+      "now": "2026-10-03T01:30:00",
+      "active": true
+    },
+    {
+      "wake": "18:00",
+      "sleep": "02:00",
+      "now": "2026-10-03T10:00:00",
+      "active": false
+    }
+  ],
+  "pushHardeningCases": [
+    {
+      "case": "permission revoked",
+      "expected": "pushEnabled false; no schedule sync"
+    },
+    {
+      "case": "browser subscription missing",
+      "expected": "pushEnabled false; UI requires user activation"
+    },
+    {
+      "case": "server device record missing, browser subscription exists",
+      "expected": "automatic re-register then schedule retry"
+    },
+    {
+      "case": "two dispatcher invocations overlap",
+      "expected": "only one atomic claim may send"
+    },
+    {
+      "case": "temporary push provider failure",
+      "expected": "claim released so grace window can retry"
+    },
+    {
+      "case": "hydration day changes while PWA stays open",
+      "expected": "Today refreshes within about 60 seconds when visible"
+    }
+  ]
+}

@@ -1,0 +1,178 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans Variable", "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --color-water-50: #eff8ff;
+  --color-water-100: #dbeeff;
+  --color-water-150: #c9e6fe;
+  --color-water-200: #b8deff;
+  --color-water-250: #9dd1fe;
+  --color-water-300: #7ec1fd;
+  --color-water-400: #46a1f8;
+  --color-water-500: #2583eb;
+  --color-water-600: #176fd0;
+  --color-water-700: #1257a8;
+  --color-water-800: #124787;
+  --color-water-900: #143d70;
+  --color-water-950: #0c274b;
+  --shadow-soft: 0 4px 16px rgba(15, 23, 42, 0.04);
+}
+
+/* Explicit utility classes so all variations can be used immediately (including live in DevTools) */
+@layer utilities {
+  .bg-water-50 { background-color: var(--color-water-50); }
+  .bg-water-100 { background-color: var(--color-water-100); }
+  .bg-water-150 { background-color: var(--color-water-150); }
+  .bg-water-200 { background-color: var(--color-water-200); }
+  .bg-water-250 { background-color: var(--color-water-250); }
+  .bg-water-300 { background-color: var(--color-water-300); }
+  .bg-water-400 { background-color: var(--color-water-400); }
+
+  .bg-water-100\/20 { background-color: color-mix(in srgb, var(--color-water-100) 20%, transparent); }
+  .bg-water-100\/40 { background-color: color-mix(in srgb, var(--color-water-100) 40%, transparent); }
+  .bg-water-100\/60 { background-color: color-mix(in srgb, var(--color-water-100) 60%, transparent); }
+  .bg-water-100\/80 { background-color: color-mix(in srgb, var(--color-water-100) 80%, transparent); }
+
+  .bg-water-200\/20 { background-color: color-mix(in srgb, var(--color-water-200) 20%, transparent); }
+  .bg-water-200\/40 { background-color: color-mix(in srgb, var(--color-water-200) 40%, transparent); }
+  .bg-water-200\/60 { background-color: color-mix(in srgb, var(--color-water-200) 60%, transparent); }
+  .bg-water-200\/80 { background-color: color-mix(in srgb, var(--color-water-200) 80%, transparent); }
+
+  .bg-water-500\/10 { background-color: color-mix(in srgb, var(--color-water-500) 10%, transparent); }
+  .bg-water-500\/15 { background-color: color-mix(in srgb, var(--color-water-500) 15%, transparent); }
+  .bg-water-500\/20 { background-color: color-mix(in srgb, var(--color-water-500) 20%, transparent); }
+  .bg-water-600\/10 { background-color: color-mix(in srgb, var(--color-water-600) 10%, transparent); }
+  .bg-water-600\/15 { background-color: color-mix(in srgb, var(--color-water-600) 15%, transparent); }
+}
+
+:root {
+  font-family: "Plus Jakarta Sans Variable", "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #0f172a;
+  background: #f1f5f9;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+  scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+html,
+body {
+  margin: 0;
+  background-color: #F2F2F7;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100dvh;
+  background-color: #F2F2F7;
+  -webkit-font-smoothing: antialiased;
+}
+
+@layer base {
+
+  button,
+  input,
+  select,
+  textarea {
+    font-family: inherit;
+  }
+
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
+
+  select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 16 16'%3E%3Cpath stroke='%23334155' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m3.5 6 4.5 4.5 4.5-4.5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    background-size: 14px 14px;
+    padding-right: 38px;
+  }
+
+  select::-ms-expand {
+    display: none;
+  }
+}
+
+button,
+select,
+input,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: #dbeeff;
+}
+
+.safe-top {
+  padding-top: max(12px, env(safe-area-inset-top));
+}
+
+.safe-bottom {
+  padding-bottom: max(8px, env(safe-area-inset-bottom));
+}
+
+.app-shell {
+  position: relative;
+  width: 100%;
+  max-width: 430px;
+  height: 100dvh;
+  min-height: 100dvh;
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: #F2F2F7;
+}
+
+.screen-scroll {
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior-y: none;
+  padding-bottom: calc(82px + env(safe-area-inset-bottom));
+}
+
+.onboarding-scroll {
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior-y: none;
+  touch-action: pan-y;
+}
+
+@media (min-width: 640px) {
+  body {
+    padding: 24px 0;
+  }
+
+  .app-shell {
+    height: calc(100vh - 48px);
+    min-height: calc(100vh - 48px);
+    border-radius: 32px;
+    box-shadow: var(--shadow-soft);
+  }
+
+  .screen-scroll {
+    padding-bottom: 90px;
+  }
+}

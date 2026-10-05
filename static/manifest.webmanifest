@@ -1,13 +1,13 @@
 {
-  "name": "IngatMinum",
-  "short_name": "IngatMinum",
+  "name": "Drops Daily",
+  "short_name": "Drops Daily",
   "id": "/",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "background_color": "#f8fafc",
   "theme_color": "#f8fafc",
-  "description": "IngatMinum — Pengingat minum air yang sederhana, adaptif, dan local-first.",
+  "description": "Drops Daily — Pengingat minum air yang sederhana, adaptif, dan local-first.",
   "icons": [
     {"src":"/icons/icon-192.png","sizes":"192x192","type":"image/png"},
     {"src":"/icons/icon-512.png","sizes":"512x512","type":"image/png"},

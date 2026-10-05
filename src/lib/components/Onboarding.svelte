@@ -320,8 +320,8 @@
         </h1>
         <p class="mt-2 text-[14px] leading-5 text-slate-500">
           {isEnglish
-            ? "Meet your daily hydration goals with Ingat Minum, an intelligent reminder designed for your everyday lifestyle."
-            : "Cukupi kebutuhan cairan harian dengan Ingat Minum, aplikasi reminder cerdas untuk aktivitas Anda."}
+            ? "Meet your daily hydration goals with Drops Daily, an intelligent reminder designed for your everyday lifestyle."
+            : "Cukupi kebutuhan cairan harian dengan Drops Daily, aplikasi reminder cerdas untuk aktivitas Anda."}
         </p>
         <div class="mt-6 grid gap-2.5">
           <div

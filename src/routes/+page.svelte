@@ -428,7 +428,7 @@
 
   async function downloadBackup() {
     const data = await exportBackup();
-    const fileName = `ingatminum-backup-${new Date().toISOString().slice(0, 10)}.json`;
+    const fileName = `drops-daily-backup-${new Date().toISOString().slice(0, 10)}.json`;
     const jsonString = JSON.stringify(data, null, 2);
 
     if (typeof navigator !== "undefined" && navigator.share && navigator.canShare) {
@@ -517,7 +517,7 @@
   });
 </script>
 
-<svelte:head><title>IngatMinum</title></svelte:head>
+<svelte:head><title>Drops Daily</title></svelte:head>
 
 {#if loading}
   <div class="app-shell grid min-h-screen place-items-center"><div class="text-center"><div class="mx-auto size-8 animate-spin rounded-full border-2 border-slate-200 border-t-water-500"></div><p class="mt-4 text-[14px] text-slate-400">{i18n.isEnglish ? "Loading local data…" : "Membuka data lokal…"}</p></div></div>

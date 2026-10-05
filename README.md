@@ -1,4 +1,4 @@
-# IngatMinum (PWA) — v0.7.0
+# Drops Daily (PWA) — v0.7.0
 
 Aplikasi web progresif (PWA) *local-first* untuk mencatat konsumsi air putih, menghitung target hidrasi harian berbasis standar Kemenkes AKG 2019, melihat statistik histori, dan menjadwalkan pengingat minum adaptif.
 
@@ -37,7 +37,7 @@ Aplikasi web progresif (PWA) *local-first* untuk mencatat konsumsi air putih, me
   - Mikro-animasi tap & hover di seluruh komponen interaktif.
   - Modal dan bottom sheet dengan arsitektur UI seragam.
 - **Pencadangan Data Mandiri (Backup & Restore)**:
-  - Ekspor seluruh data ke file JSON lokal (`ingatminum-backup-YYYY-MM-DD.json`).
+  - Ekspor seluruh data ke file JSON lokal (`drops-daily-backup-YYYY-MM-DD.json`).
   - Impor backup JSON kapan saja untuk memulihkan atau memindahkan data antar-perangkat.
 
 ---
@@ -141,7 +141,7 @@ hydration-pwa
 ## 📋 Catatan Rilis (Changelog)
 
 ### v0.7.0 (Versi Saat Ini)
-- **Rebranding Metadata**: Mengubah nama aplikasi dan branding metadata menjadi **IngatMinum**.
+- **Rebranding Metadata**: Mengubah nama aplikasi dan branding metadata menjadi **Drops Daily**.
 - **Kustomisasi Porsi Tambah Cepat**: Tombol *Custom* pada halaman Hari Ini kini membuka modal *Porsi Tambah Cepat* dengan kartu preset wadah realistis pekerja kantoran Indonesia (250ml, 350ml, 500ml, 600ml, 750ml, 1.000ml) lengkap dengan icon SVG wadah.
 - **Keyboard Angka Otomatis**: Input ml pada seluruh modal dan pengaturan menggunakan `inputmode="numeric"` dan `pattern="[0-9]*"`.
 - **Pembersihan Menu**: Menghapus duplikasi menu porsi dari halaman Pengaturan sehingga terpusat langsung di tombol Custom halaman Hari Ini.

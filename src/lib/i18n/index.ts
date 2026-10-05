@@ -91,7 +91,7 @@ export const translations = {
 
     // Subpage Titles & Descs
     subpage_profile_title: "Profil Pengguna",
-    subpage_profile_desc: "Ubah data dasar yang digunakan oleh mesin perhitungan IngatMinum.",
+    subpage_profile_desc: "Ubah data dasar yang digunakan oleh mesin perhitungan Drops Daily.",
     subpage_activity_title: "Tingkat Aktivitas",
     subpage_activity_desc: "Dipakai sebagai konteks, bukan multiplier cairan otomatis.",
     subpage_environment_title: "Kondisi Lingkungan",
@@ -228,7 +228,7 @@ export const translations = {
     modal_import_confirm: "Pulihkan Data",
 
     // Today View
-    today_title: "IngatMinum",
+    today_title: "Drops Daily",
     today_badge: "Hari Ini",
     today_header_of: "dari",
     today_target_suffix: "target",
@@ -347,7 +347,7 @@ export const translations = {
 
     // Subpage Titles & Descs
     subpage_profile_title: "User Profile",
-    subpage_profile_desc: "Modify baseline data used by the IngatMinum calculation engine.",
+    subpage_profile_desc: "Modify baseline data used by the Drops Daily calculation engine.",
     subpage_activity_title: "Activity Level",
     subpage_activity_desc: "Used as context, not an automatic fluid multiplier.",
     subpage_environment_title: "Environment Condition",
@@ -484,7 +484,7 @@ export const translations = {
     modal_import_confirm: "Restore Data",
 
     // Today View
-    today_title: "IngatMinum",
+    today_title: "Drops Daily",
     today_badge: "Today",
     today_header_of: "of",
     today_target_suffix: "target",

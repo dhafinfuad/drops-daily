@@ -260,13 +260,13 @@
 </script>
 
 <div>
-  <!-- Sticky Frosted Header with centered IngatMinum -->
+  <!-- Sticky Frosted Header with centered Drops Daily -->
   <div
     class="sticky top-0 z-20 border-b border-slate-200/60 bg-[#F2F2F7]/90 px-4 pt-[max(10px,env(safe-area-inset-top))] pb-2.5 backdrop-blur-xl transition-all"
   >
     <div class="flex items-center justify-center">
       <h1 class="text-[18px] font-bold tracking-tight text-slate-900">
-        IngatMinum
+        {i18n.t("today_title")}
       </h1>
     </div>
   </div>

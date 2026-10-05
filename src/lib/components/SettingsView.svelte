@@ -38,7 +38,7 @@
   let sheet: null | "target" | "wake" | "sleep" | "language" = null;
   let modal: null | "reset" | "export" | "import" = null;
   let pendingImportFile: File | null = null;
-  const backupFileName = `ingatminum-backup-${new Date().toISOString().slice(0, 10)}.json`;
+  const backupFileName = `drops-daily-backup-${new Date().toISOString().slice(0, 10)}.json`;
   let localProfile: Profile = structuredClone(profile);
   let localSettings: AppSettings = structuredClone(settings);
   let busyPush = false;

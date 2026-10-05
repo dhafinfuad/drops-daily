@@ -1,6 +1,6 @@
 {
-  "name": "ingatminum",
-  "description": "IngatMinum — Pengingat minum air yang sederhana, adaptif, dan local-first.",
+  "name": "drops-daily",
+  "description": "Drops Daily — Pengingat minum air yang sederhana, adaptif, dan local-first.",
   "private": true,
   "version": "0.7.0",
   "type": "module",

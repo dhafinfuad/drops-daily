@@ -46,12 +46,12 @@ Progressive Web App (PWA) **local-first** modern untuk mencatat asupan air haria
 
 | 🚀 Onboarding | 💧 Dashboard | 🫗 Custom Portions |
 | :---: | :---: | :---: |
-| ![Onboarding](docs/screenshots/01-onboarding.png) | ![Dashboard](docs/screenshots/02-today-view.png) | ![Custom Portions](docs/screenshots/03-custom-portions.png) |
+| ![Onboarding](docs/screenshots/01-onboarding.webp) | ![Dashboard](docs/screenshots/02-today-view.webp) | ![Custom Portions](docs/screenshots/03-custom-portions.webp) |
 | *Wizard personal berbasis AKG* | *Cincin progres & aksi cepat* | *Preset wadah khas Indonesia* |
 
 | 📊 Histori & Analisis | ⚙️ Pengaturan & Backup |
 | :---: | :---: |
-| ![Histori](docs/screenshots/04-history-view.png) | ![Pengaturan](docs/screenshots/05-settings-view.png) |
+| ![Histori](docs/screenshots/04-history-view.webp) | ![Pengaturan](docs/screenshots/05-settings-view.webp) |
 | *Grafik tren & streak harian* | *Profil & ekspor JSON* |
 
 ---

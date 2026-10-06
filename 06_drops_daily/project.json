@@ -1,0 +1,38 @@
+{
+  "id": "drops-daily",
+  "title": "Drops Daily",
+  "category": "webapp",
+  "tag": "PWA / WEB APP",
+  "badge": "LOCAL-FIRST",
+  "subtitle": "Aplikasi Pelacak & Pengingat Hidrasi Cerdas Berbasis Standar Medis AKG Kemenkes RI 2019: Arsitektur Local-First Tanpa Akun, Kalkulator Kebutuhan Cairan Adaptif, Wadah Porsi Realistis Indonesia, Web Push Notification, serta PWA Offline Penuh.",
+  "techStack": [
+    { "name": "Svelte 5", "color": "bg-orange-600", "title": "Frontend Core: Svelte 5 (Runes)" },
+    { "name": "SvelteKit 2", "color": "bg-red-500", "title": "Meta Framework: SvelteKit 2" },
+    { "name": "TypeScript", "color": "bg-blue-600", "title": "Type Safety: TypeScript 5" },
+    { "name": "Tailwind CSS", "color": "bg-sky-500", "title": "Design System: Tailwind CSS v4" },
+    { "name": "IndexedDB", "color": "bg-emerald-600", "title": "Client Database: IndexedDB via idb" },
+    { "name": "PWA", "color": "bg-purple-600", "title": "Offline-First: Native Service Worker" },
+    { "name": "Web Push", "color": "bg-amber-600", "title": "Notifications: VAPID & Netlify Functions" },
+    { "name": "Vite 8", "color": "bg-violet-600", "title": "Build Tooling: Vite 8" },
+    { "name": "Netlify", "color": "bg-teal-600", "title": "Serverless: Netlify Functions & Blobs" }
+  ],
+  "screenshotsDir": "screenshots_dropsdaily",
+  "galleryCount": 15,
+  "gallery": [
+    ["01_onboarding_welcome", "01. Onboarding — Selamat Datang & Pengenalan Aplikasi Drops Daily"],
+    ["02_onboarding_kategori", "02. Onboarding — Pemilihan Kategori Pengguna (Dewasa, Hamil, Menyusui, Bayi/Anak)"],
+    ["03_onboarding_profil_fisik", "03. Onboarding — Data Antropometri (Jenis Kelamin, Usia, Berat Badan & Aktivitas)"],
+    ["04_onboarding_jadwal", "04. Onboarding — Ritme Biologis (Jadwal Jam Bangun Tidur & Waktu Istirahat)"],
+    ["05_onboarding_ringkasan_akg", "05. Onboarding — Ringkasan Kebutuhan Cairan & Target Harian AKG Kemenkes"],
+    ["06_dashboard_utama", "06. Dashboard Utama — Cincin Progres Hidrasi Dinamis & Aksi Cepat Minum"],
+    ["07_modal_kustom_wadah", "07. Porsi Kustom — Modal Wadah Minum Realistis Khas Indonesia (250ml s.d. 1.000ml)"],
+    ["08_modal_input_manual", "08. Porsi Kustom — Input Fleksibel Volume Air dengan Keypad Numerik"],
+    ["09_histori_grafik_tren", "09. Analitik Hidrasi — Grafik Tren Konsumsi 7 Hari / 30 Hari & Streak Counter"],
+    ["10_histori_log_catatan", "10. Riwayat Catatan — Audit Trail Sesi Konsumsi Air Harian & Waktu Tercatat"],
+    ["11_pengaturan_utama", "11. Pengaturan — Menu Konfigurasi Sistem Berbasis Antarmuka Bergaya iOS"],
+    ["12_pengaturan_profil_fisik", "12. Pengaturan Profil — Subhalaman Ubah Data Fisik & Penyesuaian Medis"],
+    ["13_pengaturan_cadangan_data", "13. Cadangan Data — Pencadangan Mandiri (Ekspor & Impor Berkas JSON Lokal)"],
+    ["14_pengaturan_rumus_akg", "14. Rujukan Medis — Transparansi Formula Perhitungan Permenkes RI No. 28/2019"],
+    ["15_pengaturan_notifikasi_push", "15. Pengingat Pintar — Pengaturan Web Push Notifikasi Adaptif & Jam Tenang"]
+  ]
+}

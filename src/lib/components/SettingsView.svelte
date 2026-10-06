@@ -340,7 +340,7 @@
   {#if page}
     <!-- Sticky frosted subpage navigation bar -->
     <div
-      class="sticky top-0 z-20 border-b border-slate-200/60 bg-[#F2F2F7]/90 px-[17px] pt-[max(10px,env(safe-area-inset-top))] pb-[10px] backdrop-blur-xl transition-all"
+      class="sticky top-0 z-20 border-b border-slate-200/60 bg-[#F2F2F7]/90 px-4.25 pt-[max(10px,env(safe-area-inset-top))] pb-2.5 backdrop-blur-xl transition-all"
     >
       <div class="flex items-center justify-between">
         <button
@@ -361,7 +361,7 @@
       </div>
     </div>
 
-    <header class="px-[17px] pt-3">
+    <header class="px-4.25 pt-3">
       {#if page === "profile"}
         <p class="text-[14px] leading-6 text-slate-500">
           {i18n.t("subpage_profile_desc")}
@@ -403,7 +403,7 @@
             {#each userTypeOptions as item}
               <button
                 onclick={() => chooseUserType(item.id)}
-                class="rounded-2xl border px-[13px] py-[11px] text-[16px] font-semibold {localProfile.userType ===
+                class="rounded-2xl border px-3.25 py-2.75 text-[16px] font-semibold {localProfile.userType ===
                 item.id
                   ? 'border-water-500 bg-water-50 text-water-600'
                   : 'border-slate-200 bg-white'}">{item.label}</button
@@ -425,7 +425,7 @@
                 await saveProfileNow();
                 e.currentTarget.blur();
               }}
-              class="w-full rounded-2xl border border-slate-200 bg-white pl-[17px] pr-[41px] py-[11px] text-[16px] font-semibold outline-none focus:border-water-500 transition-colors duration-150"
+              class="w-full rounded-2xl border border-slate-200 bg-white pl-4.25 pr-10.25 py-2.75 text-[16px] font-semibold outline-none focus:border-water-500 transition-colors duration-150"
             >
               {#each ageOptions as item}
                 <option value={item}>{item}</option>
@@ -447,9 +447,9 @@
                 }
                 localProfile = { ...localProfile };
                 await saveProfileNow();
-                (e.currentTarget as HTMLSelectElement)?.blur();
+                e.currentTarget.blur();
               }}
-              class="w-full rounded-2xl border border-slate-200 bg-white pl-[17px] pr-[41px] py-[11px] text-[16px] font-semibold outline-none focus:border-water-500 transition-colors duration-150"
+              class="w-full rounded-2xl border border-slate-200 bg-white pl-4.25 pr-10.25 py-2.75 text-[16px] font-semibold outline-none focus:border-water-500 transition-colors duration-150"
             >
               <option value="years">{i18n.t("age_unit_years")}</option>
               <option value="months">{i18n.t("age_unit_months")}</option>
@@ -470,7 +470,7 @@
               }}
               disabled={localProfile.userType === "pregnant" ||
                 localProfile.userType === "breastfeeding"}
-              class="rounded-2xl border px-[13px] py-[11px] text-[16px] font-semibold {localProfile.sex ===
+              class="rounded-2xl border px-3.25 py-2.75 text-[16px] font-semibold {localProfile.sex ===
               'male'
                 ? 'border-water-500 bg-water-50 text-water-600 shadow-sm'
                 : 'border-slate-200 bg-white hover:border-slate-300 hover:bg-slate-50/60'} disabled:opacity-40"
@@ -482,7 +482,7 @@
                 localProfile = { ...localProfile };
                 await saveProfileNow();
               }}
-              class="rounded-2xl border px-[13px] py-[11px] text-[16px] font-semibold {localProfile.sex ===
+              class="rounded-2xl border px-3.25 py-2.75 text-[16px] font-semibold {localProfile.sex ===
               'female'
                 ? 'border-water-500 bg-water-50 text-water-600 shadow-sm'
                 : 'border-slate-200 bg-white hover:border-slate-300 hover:bg-slate-50/60'}"
@@ -504,7 +504,7 @@
                     localProfile = { ...localProfile };
                     await saveProfileNow();
                   }}
-                  class="rounded-2xl border py-[11px] text-[16px] font-semibold {localProfile.pregnancyTrimester ===
+                  class="rounded-2xl border py-2.75 text-[16px] font-semibold {localProfile.pregnancyTrimester ===
                   trimester
                     ? 'border-water-500 bg-water-50 text-water-600 shadow-sm'
                     : 'border-slate-200 bg-white hover:border-slate-300 hover:bg-slate-50/60'}"
@@ -527,7 +527,7 @@
                   localProfile = { ...localProfile };
                   await saveProfileNow();
                 }}
-                class="rounded-2xl border px-[13px] py-[11px] text-[16px] font-semibold {localProfile.lactationPeriod ===
+                class="rounded-2xl border px-3.25 py-2.75 text-[16px] font-semibold {localProfile.lactationPeriod ===
                 'month_0_6'
                   ? 'border-water-500 bg-water-50 text-water-600 shadow-sm'
                   : 'border-slate-200 bg-white hover:border-slate-300 hover:bg-slate-50/60'}"
@@ -539,7 +539,7 @@
                   localProfile = { ...localProfile };
                   await saveProfileNow();
                 }}
-                class="rounded-2xl border px-[13px] py-[11px] text-[16px] font-semibold {localProfile.lactationPeriod ===
+                class="rounded-2xl border px-3.25 py-2.75 text-[16px] font-semibold {localProfile.lactationPeriod ===
                 'month_7_12'
                   ? 'border-water-500 bg-water-50 text-water-600 shadow-sm'
                   : 'border-slate-200 bg-white hover:border-slate-300 hover:bg-slate-50/60'}"
@@ -561,9 +561,9 @@
                 localProfile.weightKg = val === "" ? null : Number(val);
                 localProfile = { ...localProfile };
                 await saveProfileNow();
-                (e.currentTarget as HTMLSelectElement)?.blur();
+                e.currentTarget.blur();
               }}
-              class="w-full rounded-2xl border border-slate-200 bg-white pl-[17px] pr-[41px] py-[11px] text-[16px] font-semibold outline-none focus:border-water-500 transition-colors duration-150"
+              class="w-full rounded-2xl border border-slate-200 bg-white pl-4.25 pr-10.25 py-2.75 text-[16px] font-semibold outline-none focus:border-water-500 transition-colors duration-150"
             >
               <option value="">{i18n.t("weight_empty")}</option>
               {#each weightOptions as item}
@@ -580,14 +580,14 @@
           <div class="grid grid-cols-2 gap-2">
             <button
               onclick={() => setFluidRestriction(false)}
-              class="rounded-2xl border py-[11px] text-[16px] font-semibold {!localProfile.fluidRestrictionByDoctor
+              class="rounded-2xl border py-2.75 text-[16px] font-semibold {!localProfile.fluidRestrictionByDoctor
                 ? 'border-water-500 bg-water-50 text-water-600 shadow-sm'
                 : 'border-slate-200 bg-white hover:border-slate-300 hover:bg-slate-50/60'}"
               >{i18n.t("no")}</button
             >
             <button
               onclick={() => setFluidRestriction(true)}
-              class="rounded-2xl border py-[11px] text-[16px] font-semibold {localProfile.fluidRestrictionByDoctor
+              class="rounded-2xl border py-2.75 text-[16px] font-semibold {localProfile.fluidRestrictionByDoctor
                 ? 'border-water-500 bg-water-50 text-water-600 shadow-sm'
                 : 'border-slate-200 bg-white hover:border-slate-300 hover:bg-slate-50/60'}"
               >{i18n.t("yes")}</button
@@ -601,7 +601,7 @@
               >{i18n.t("medical_target_label")}</span
             >
             <div
-              class="flex items-center rounded-2xl border border-slate-200 bg-white px-[17px]"
+              class="flex items-center rounded-2xl border border-slate-200 bg-white px-4.25"
             >
               <input
                 type="number"
@@ -611,7 +611,7 @@
                 bind:value={localSettings.manualTargetMl}
                 onchange={saveProfileAndSettingsNow}
                 onblur={saveProfileAndSettingsNow}
-                class="min-w-0 flex-1 py-[11px] text-[16px] font-semibold outline-none"
+                class="min-w-0 flex-1 py-2.75 text-[16px] font-semibold outline-none"
               />
               <span class="text-[14px] text-slate-400">{i18n.t("unit_ml_per_day")}</span>
             </div>
@@ -623,7 +623,7 @@
         {#each activityOptions as item}
           <button
             onclick={() => chooseActivity(item.id)}
-            class="rounded-2xl border px-[17px] py-[11px] text-left {localProfile.activity ===
+            class="rounded-2xl border px-4.25 py-2.75 text-left {localProfile.activity ===
             item.id
               ? 'border-water-500 bg-water-50 shadow-sm'
               : 'border-slate-200 bg-white hover:border-slate-300 hover:bg-slate-50/60'}"
@@ -652,7 +652,7 @@
         {#each environmentOptions as item}
           <button
             onclick={() => chooseEnvironment(item.id)}
-            class="rounded-2xl border px-[17px] py-[11px] text-left {localProfile.environment ===
+            class="rounded-2xl border px-4.25 py-2.75 text-left {localProfile.environment ===
             item.id
               ? 'border-water-500 bg-water-50 shadow-sm'
               : 'border-slate-200 bg-white hover:border-slate-300 hover:bg-slate-50/60'}"
@@ -678,13 +678,13 @@
       </section>
     {:else if page === "data"}
       <section class="mx-4 mt-5 space-y-4">
-        <div class="rounded-2xl bg-white p-[13px] shadow-sm">
+        <div class="rounded-2xl bg-white p-3.25 shadow-sm">
           <h2 class="text-[16px] font-bold">IndexedDB</h2>
           <p class="mt-2 text-[14px] leading-6 text-slate-500">
             {i18n.t("data_indexeddb_desc")}
           </p>
           <div
-            class="mt-3 flex items-center justify-between rounded-2xl bg-slate-50 px-[13px] py-[11px]"
+            class="mt-3 flex items-center justify-between rounded-2xl bg-slate-50 px-3.25 py-2.75"
           >
             <span class="text-[14px] font-semibold text-slate-600"
               >{i18n.t("data_storage_label")}</span
@@ -700,13 +700,13 @@
         </div>
         <button
           onclick={() => (modal = "export")}
-          class="flex w-full items-center gap-2.5 rounded-2xl bg-white px-[17px] py-[11px] text-left shadow-sm hover:bg-slate-50 hover:shadow active:scale-[.99] transition-all duration-150"
+          class="flex w-full items-center gap-2.5 rounded-2xl bg-white px-4.25 py-2.75 text-left shadow-sm hover:bg-slate-50 hover:shadow active:scale-[.99] transition-all duration-150"
           ><Icon name="download" className="size-5 text-slate-500" /><span
             class="text-[16px] font-semibold">{i18n.t("data_export_btn")}</span
           ></button
         >
         <label
-          class="flex w-full cursor-pointer items-center gap-2.5 rounded-2xl bg-white px-[17px] py-[11px] shadow-sm hover:bg-slate-50 hover:shadow active:scale-[.99] transition-all duration-150"
+          class="flex w-full cursor-pointer items-center gap-2.5 rounded-2xl bg-white px-4.25 py-2.75 shadow-sm hover:bg-slate-50 hover:shadow active:scale-[.99] transition-all duration-150"
           ><Icon name="upload" className="size-5 text-slate-500" /><span
             class="text-[16px] font-semibold">{i18n.t("data_import_btn")}</span
           ><input
@@ -719,13 +719,13 @@
       </section>
     {:else if page === "privacy"}
       <section class="mx-4 mt-5 space-y-4">
-        <div class="rounded-2xl bg-white p-[13px] shadow-sm">
+        <div class="rounded-2xl bg-white p-3.25 shadow-sm">
           <h2 class="text-[16px] font-bold">{i18n.t("privacy_local_title")}</h2>
           <p class="mt-2 text-[14px] leading-6 text-slate-500">
             {i18n.t("privacy_local_desc")}
           </p>
         </div>
-        <div class="rounded-2xl bg-white p-[13px] shadow-sm">
+        <div class="rounded-2xl bg-white p-3.25 shadow-sm">
           <h2 class="text-[16px] font-bold">{i18n.t("privacy_push_title")}</h2>
           <p class="mt-2 text-[14px] leading-6 text-slate-500">
             {i18n.t("privacy_push_desc")}
@@ -734,7 +734,7 @@
       </section>
     {:else if page === "formula"}
       <section class="mx-4 mt-5 space-y-4">
-        <div class="rounded-2xl bg-white p-[13px] shadow-sm">
+        <div class="rounded-2xl bg-white p-3.25 shadow-sm">
           <p
             class="text-[12px] font-semibold uppercase tracking-[.08em] text-water-600"
           >
@@ -746,72 +746,72 @@
           </p>
           <div class="mt-3 overflow-hidden rounded-2xl border border-slate-100">
             <div
-              class="grid grid-cols-[1fr_auto] gap-2.5 bg-slate-50 px-[17px] py-[11px] text-[12px] font-semibold text-slate-400"
+              class="grid grid-cols-[1fr_auto] gap-2.5 bg-slate-50 px-4.25 py-2.75 text-[12px] font-semibold text-slate-400"
             >
               <span>{i18n.t("formula_col_group")}</span><span>{i18n.t("unit_ml_per_day")}</span>
             </div>
             <div
-              class="grid grid-cols-[1fr_auto] gap-2.5 border-t border-slate-100 px-[17px] py-[11px] text-[14px]"
+              class="grid grid-cols-[1fr_auto] gap-2.5 border-t border-slate-100 px-4.25 py-2.75 text-[14px]"
             >
               <span>{i18n.t("formula_age_0_5_months")}</span><strong class="font-semibold">700</strong>
             </div>
             <div
-              class="grid grid-cols-[1fr_auto] gap-2.5 border-t border-slate-100 px-[17px] py-[11px] text-[14px]"
+              class="grid grid-cols-[1fr_auto] gap-2.5 border-t border-slate-100 px-4.25 py-2.75 text-[14px]"
             >
               <span>{i18n.t("formula_age_6_11_months")}</span><strong class="font-semibold">900</strong>
             </div>
             <div
-              class="grid grid-cols-[1fr_auto] gap-2.5 border-t border-slate-100 px-[17px] py-[11px] text-[14px]"
+              class="grid grid-cols-[1fr_auto] gap-2.5 border-t border-slate-100 px-4.25 py-2.75 text-[14px]"
             >
               <span>{i18n.t("formula_age_1_3_years")}</span><strong class="font-semibold">1.150</strong>
             </div>
             <div
-              class="grid grid-cols-[1fr_auto] gap-2.5 border-t border-slate-100 px-[17px] py-[11px] text-[14px]"
+              class="grid grid-cols-[1fr_auto] gap-2.5 border-t border-slate-100 px-4.25 py-2.75 text-[14px]"
             >
               <span>{i18n.t("formula_age_4_6_years")}</span><strong class="font-semibold">1.450</strong>
             </div>
             <div
-              class="grid grid-cols-[1fr_auto] gap-2.5 border-t border-slate-100 px-[17px] py-[11px] text-[14px]"
+              class="grid grid-cols-[1fr_auto] gap-2.5 border-t border-slate-100 px-4.25 py-2.75 text-[14px]"
             >
               <span>{i18n.t("formula_age_7_9_years")}</span><strong class="font-semibold">1.650</strong>
             </div>
             <div
-              class="grid grid-cols-[1fr_auto] gap-2.5 border-t border-slate-100 px-[17px] py-[11px] text-[14px]"
+              class="grid grid-cols-[1fr_auto] gap-2.5 border-t border-slate-100 px-4.25 py-2.75 text-[14px]"
             >
               <span>{i18n.t("formula_age_10_12_years")}</span><strong class="font-semibold"
                 >1.850</strong
               >
             </div>
             <div
-              class="grid grid-cols-[1fr_auto] gap-2.5 border-t border-slate-100 px-[17px] py-[11px] text-[14px]"
+              class="grid grid-cols-[1fr_auto] gap-2.5 border-t border-slate-100 px-4.25 py-2.75 text-[14px]"
             >
               <span>{i18n.t("formula_age_13_15_years")}</span><strong class="font-semibold"
                 >2.100</strong
               >
             </div>
             <div
-              class="grid grid-cols-[1fr_auto] gap-2.5 border-t border-slate-100 px-[17px] py-[11px] text-[14px]"
+              class="grid grid-cols-[1fr_auto] gap-2.5 border-t border-slate-100 px-4.25 py-2.75 text-[14px]"
             >
               <span>{i18n.t("formula_age_16_18_years")}</span><strong class="font-semibold"
                 >2.300 / 2.150</strong
               >
             </div>
             <div
-              class="grid grid-cols-[1fr_auto] gap-2.5 border-t border-slate-100 px-[17px] py-[11px] text-[14px]"
+              class="grid grid-cols-[1fr_auto] gap-2.5 border-t border-slate-100 px-4.25 py-2.75 text-[14px]"
             >
               <span>{i18n.t("formula_age_19_64_years")}</span><strong class="font-semibold"
                 >2.500 / 2.350</strong
               >
             </div>
             <div
-              class="grid grid-cols-[1fr_auto] gap-2.5 border-t border-slate-100 px-[17px] py-[11px] text-[14px]"
+              class="grid grid-cols-[1fr_auto] gap-2.5 border-t border-slate-100 px-4.25 py-2.75 text-[14px]"
             >
               <span>{i18n.t("formula_age_65_80_years")}</span><strong class="font-semibold"
                 >1.800 / 1.550</strong
               >
             </div>
             <div
-              class="grid grid-cols-[1fr_auto] gap-2.5 border-t border-slate-100 px-[17px] py-[11px] text-[14px]"
+              class="grid grid-cols-[1fr_auto] gap-2.5 border-t border-slate-100 px-4.25 py-2.75 text-[14px]"
             >
               <span>{i18n.t("formula_age_gt_80_years")}</span><strong class="font-semibold"
                 >1.600 / 1.400</strong
@@ -820,7 +820,7 @@
           </div>
         </div>
 
-        <div class="rounded-2xl bg-white p-[13px] shadow-sm">
+        <div class="rounded-2xl bg-white p-3.25 shadow-sm">
           <p
             class="text-[12px] font-semibold uppercase tracking-[.08em] text-water-600"
           >
@@ -844,7 +844,7 @@
           </div>
         </div>
 
-        <div class="rounded-2xl bg-water-50 p-[13px]">
+        <div class="rounded-2xl bg-water-50 p-3.25">
           <p
             class="text-[12px] font-semibold uppercase tracking-[.08em] text-water-600"
           >
@@ -854,7 +854,7 @@
             {i18n.t("formula_step3_title")}
           </h2>
           <div
-            class="mt-3 rounded-2xl bg-white px-[17px] py-[11px] text-center shadow-sm"
+            class="mt-3 rounded-2xl bg-white px-4.25 py-2.75 text-center shadow-sm"
           >
             <p class="text-[14px] text-slate-500">{i18n.t("formula_water_target")}</p>
             <p class="mt-2 text-[20px] font-bold tracking-[-.03em]">
@@ -872,7 +872,7 @@
           </p>
         </div>
 
-        <div class="rounded-2xl bg-white p-[13px] shadow-sm">
+        <div class="rounded-2xl bg-white p-3.25 shadow-sm">
           <h2 class="text-[16px] font-bold">{i18n.t("formula_special_rules_title")}</h2>
           <div class="mt-3 space-y-3 text-[14px] leading-6 text-slate-500">
             <p>
@@ -897,7 +897,7 @@
       </section>
     {:else if page === "push"}
       <section class="mx-4 mt-5 space-y-4">
-        <div class="rounded-2xl bg-white p-[13px] shadow-sm">
+        <div class="rounded-2xl bg-white p-3.25 shadow-sm">
           <div class="flex items-start gap-2.5">
             <div
               class="grid size-8 shrink-0 place-items-center rounded-2xl bg-water-50 text-water-600"
@@ -920,19 +920,19 @@
           </div>
         </div>
         {#if pushMessage}<div
-            class="rounded-2xl bg-amber-50 px-[17px] py-[11px] text-[14px] leading-6 text-amber-800"
+            class="rounded-2xl bg-amber-50 px-4.25 py-2.75 text-[14px] leading-6 text-amber-800"
           >
             {pushMessage}
           </div>{/if}
         {#if meta.pushEnabled}<button
             disabled={busyPush}
             onclick={() => setPush(false)}
-            class="w-full rounded-2xl bg-slate-900 py-[11px] text-[16px] font-bold text-white hover:bg-slate-800 active:scale-[.99] transition-all duration-150 disabled:opacity-50"
+            class="w-full rounded-2xl bg-slate-900 py-2.75 text-[16px] font-bold text-white hover:bg-slate-800 active:scale-[.99] transition-all duration-150 disabled:opacity-50"
             >{i18n.t("push_btn_disable")}</button
           >{:else}<button
             disabled={busyPush}
             onclick={() => setPush(true)}
-            class="w-full rounded-2xl bg-water-500 py-[11px] text-[16px] font-bold text-white shadow-lg shadow-blue-500/20 hover:bg-water-600 active:scale-[.99] transition-all duration-150 disabled:opacity-50"
+            class="w-full rounded-2xl bg-water-500 py-2.75 text-[16px] font-bold text-white shadow-lg shadow-blue-500/20 hover:bg-water-600 active:scale-[.99] transition-all duration-150 disabled:opacity-50"
             >{i18n.t("push_btn_enable")}</button
           >{/if}
         <p class="text-[12px] leading-5 text-slate-400">
@@ -944,7 +944,7 @@
     <div>
       <!-- Sticky Frosted Header for Main Settings -->
       <div
-        class="sticky top-0 z-20 border-b border-slate-200/60 bg-[#F2F2F7]/90 px-[17px] pt-[max(10px,env(safe-area-inset-top))] pb-[10px] backdrop-blur-xl transition-all"
+        class="sticky top-0 z-20 border-b border-slate-200/60 bg-[#F2F2F7]/90 px-4.25 pt-[max(10px,env(safe-area-inset-top))] pb-2.5 backdrop-blur-xl transition-all"
       >
         <div class="flex items-center justify-between">
           <h1 class="text-[20px] font-bold tracking-[-.03em] text-slate-900">
@@ -955,7 +955,7 @@
 
       <section class="mx-4 mt-5">
         <h2
-          class="mb-2 px-[5px] text-[12px] font-semibold uppercase tracking-[.08em] text-slate-400"
+          class="mb-2 px-1.25 text-[12px] font-semibold uppercase tracking-[.08em] text-slate-400"
         >
           {i18n.t("section_targets")}
         </h2>
@@ -964,7 +964,7 @@
         >
           <button
             onclick={() => (sheet = "target")}
-            class="group flex min-h-[50px] w-full items-center gap-2.5 px-[17px] py-[14px] text-left hover:bg-slate-50/80 active:bg-slate-100/90 active:scale-[.995] transition-all duration-150"
+            class="group flex min-h-12.5 w-full items-center gap-2.5 px-4.25 py-3.5 text-left hover:bg-slate-50/80 active:bg-slate-100/90 active:scale-[.995] transition-all duration-150"
             ><div
               class="grid size-8 place-items-center rounded-2xl bg-water-100/60 text-water-600 transition-colors group-hover:bg-water-200/40"
             >
@@ -985,7 +985,7 @@
           >
           <button
             onclick={toggleReminder}
-            class="group flex min-h-[50px] w-full items-center gap-2.5 px-[17px] py-[14px] text-left hover:bg-slate-50/80 active:bg-slate-100/90 active:scale-[.995] transition-all duration-150"
+            class="group flex min-h-12.5 w-full items-center gap-2.5 px-4.25 py-3.5 text-left hover:bg-slate-50/80 active:bg-slate-100/90 active:scale-[.995] transition-all duration-150"
             ><div
               class="grid size-8 place-items-center rounded-2xl bg-water-100/60 text-water-600 transition-colors group-hover:bg-water-200/40"
             >
@@ -1010,7 +1010,7 @@
           >
           <button
             onclick={() => openSubpage("push")}
-            class="group flex min-h-[50px] w-full items-center gap-2.5 px-[17px] py-[14px] text-left hover:bg-slate-50/80 active:bg-slate-100/90 active:scale-[.995] transition-all duration-150"
+            class="group flex min-h-12.5 w-full items-center gap-2.5 px-4.25 py-3.5 text-left hover:bg-slate-50/80 active:bg-slate-100/90 active:scale-[.995] transition-all duration-150"
             ><div
               class="grid size-8 place-items-center rounded-2xl bg-water-100/60 text-water-600 transition-colors group-hover:bg-water-200/40"
             >
@@ -1029,7 +1029,7 @@
           >
           <button
             onclick={() => (sheet = "wake")}
-            class="group flex min-h-[50px] w-full items-center gap-2.5 px-[17px] py-[14px] text-left hover:bg-slate-50/80 active:bg-slate-100/90 active:scale-[.995] transition-all duration-150"
+            class="group flex min-h-12.5 w-full items-center gap-2.5 px-4.25 py-3.5 text-left hover:bg-slate-50/80 active:bg-slate-100/90 active:scale-[.995] transition-all duration-150"
             ><div
               class="grid size-8 place-items-center rounded-2xl bg-water-100/60 text-water-600 transition-colors group-hover:bg-water-200/40"
             >
@@ -1048,7 +1048,7 @@
           >
           <button
             onclick={() => (sheet = "sleep")}
-            class="group flex min-h-[50px] w-full items-center gap-2.5 px-[17px] py-[14px] text-left hover:bg-slate-50/80 active:bg-slate-100/90 active:scale-[.995] transition-all duration-150"
+            class="group flex min-h-12.5 w-full items-center gap-2.5 px-4.25 py-3.5 text-left hover:bg-slate-50/80 active:bg-slate-100/90 active:scale-[.995] transition-all duration-150"
             ><div
               class="grid size-8 place-items-center rounded-2xl bg-water-100/60 text-water-600 transition-colors group-hover:bg-water-200/40"
             >
@@ -1071,7 +1071,7 @@
       <!-- Language / Preferences Section -->
       <section class="mx-4 mt-5">
         <h2
-          class="mb-2 px-[5px] text-[12px] font-semibold uppercase tracking-[.08em] text-slate-400"
+          class="mb-2 px-1.25 text-[12px] font-semibold uppercase tracking-[.08em] text-slate-400"
         >
           {i18n.t("section_preferences")}
         </h2>
@@ -1080,7 +1080,7 @@
         >
           <button
             onclick={() => (sheet = "language")}
-            class="group flex min-h-[50px] w-full items-center gap-2.5 px-[17px] py-[14px] text-left hover:bg-slate-50/80 active:bg-slate-100/90 active:scale-[.995] transition-all duration-150"
+            class="group flex min-h-12.5 w-full items-center gap-2.5 px-4.25 py-3.5 text-left hover:bg-slate-50/80 active:bg-slate-100/90 active:scale-[.995] transition-all duration-150"
           >
             <div
               class="grid size-8 place-items-center rounded-2xl bg-water-100/60 text-water-600 transition-colors group-hover:bg-water-200/40"
@@ -1103,7 +1103,7 @@
 
       <section class="mx-4 mt-5">
         <h2
-          class="mb-2 px-[5px] text-[12px] font-semibold uppercase tracking-[.08em] text-slate-400"
+          class="mb-2 px-1.25 text-[12px] font-semibold uppercase tracking-[.08em] text-slate-400"
         >
           {i18n.t("section_profile")}
         </h2>
@@ -1112,7 +1112,7 @@
         >
           <button
             onclick={() => openSubpage("profile")}
-            class="group flex min-h-[50px] w-full items-center gap-2.5 px-[17px] py-[14px] text-left hover:bg-slate-50/80 active:bg-slate-100/90 active:scale-[.995] transition-all duration-150"
+            class="group flex min-h-12.5 w-full items-center gap-2.5 px-4.25 py-3.5 text-left hover:bg-slate-50/80 active:bg-slate-100/90 active:scale-[.995] transition-all duration-150"
             ><div
               class="grid size-8 place-items-center rounded-2xl bg-water-100/60 text-water-600 transition-colors group-hover:bg-water-200/40"
             >
@@ -1131,7 +1131,7 @@
           >
           <button
             onclick={() => openSubpage("activity")}
-            class="group flex min-h-[50px] w-full items-center gap-2.5 px-[17px] py-[14px] text-left hover:bg-slate-50/80 active:bg-slate-100/90 active:scale-[.995] transition-all duration-150"
+            class="group flex min-h-12.5 w-full items-center gap-2.5 px-4.25 py-3.5 text-left hover:bg-slate-50/80 active:bg-slate-100/90 active:scale-[.995] transition-all duration-150"
             ><div
               class="grid size-8 place-items-center rounded-2xl bg-water-100/60 text-water-600 transition-colors group-hover:bg-water-200/40"
             >
@@ -1150,7 +1150,7 @@
           >
           <button
             onclick={() => openSubpage("environment")}
-            class="group flex min-h-[50px] w-full items-center gap-2.5 px-[17px] py-[14px] text-left hover:bg-slate-50/80 active:bg-slate-100/90 active:scale-[.995] transition-all duration-150"
+            class="group flex min-h-12.5 w-full items-center gap-2.5 px-4.25 py-3.5 text-left hover:bg-slate-50/80 active:bg-slate-100/90 active:scale-[.995] transition-all duration-150"
             ><div
               class="grid size-8 place-items-center rounded-2xl bg-water-100/60 text-water-600 transition-colors group-hover:bg-water-200/40"
             >
@@ -1172,7 +1172,7 @@
 
       <section class="mx-4 mt-5">
         <h2
-          class="mb-2 px-[5px] text-[12px] font-semibold uppercase tracking-[.08em] text-slate-400"
+          class="mb-2 px-1.25 text-[12px] font-semibold uppercase tracking-[.08em] text-slate-400"
         >
           {i18n.t("section_data_privacy")}
         </h2>
@@ -1181,7 +1181,7 @@
         >
           <button
             onclick={() => openSubpage("formula")}
-            class="group flex min-h-[50px] w-full items-center gap-2.5 px-[17px] py-[14px] text-left hover:bg-slate-50/80 active:bg-slate-100/90 active:scale-[.995] transition-all duration-150"
+            class="group flex min-h-12.5 w-full items-center gap-2.5 px-4.25 py-3.5 text-left hover:bg-slate-50/80 active:bg-slate-100/90 active:scale-[.995] transition-all duration-150"
             ><div
               class="grid size-8 place-items-center rounded-2xl bg-water-100/60 text-water-600 transition-colors group-hover:bg-water-200/40"
             >
@@ -1200,7 +1200,7 @@
           >
           <button
             onclick={() => openSubpage("data")}
-            class="group flex min-h-[50px] w-full items-center gap-2.5 px-[17px] py-[14px] text-left hover:bg-slate-50/80 active:bg-slate-100/90 active:scale-[.995] transition-all duration-150"
+            class="group flex min-h-12.5 w-full items-center gap-2.5 px-4.25 py-3.5 text-left hover:bg-slate-50/80 active:bg-slate-100/90 active:scale-[.995] transition-all duration-150"
             ><div
               class="grid size-8 place-items-center rounded-2xl bg-water-100/60 text-water-600 transition-colors group-hover:bg-water-200/40"
             >
@@ -1217,7 +1217,7 @@
           >
           <button
             onclick={() => openSubpage("privacy")}
-            class="group flex min-h-[50px] w-full items-center gap-2.5 px-[17px] py-[14px] text-left hover:bg-slate-50/80 active:bg-slate-100/90 active:scale-[.995] transition-all duration-150"
+            class="group flex min-h-12.5 w-full items-center gap-2.5 px-4.25 py-3.5 text-left hover:bg-slate-50/80 active:bg-slate-100/90 active:scale-[.995] transition-all duration-150"
             ><div
               class="grid size-8 place-items-center rounded-2xl bg-water-100/60 text-water-600 transition-colors group-hover:bg-water-200/40"
             >
@@ -1238,7 +1238,7 @@
       <section class="mx-4 mt-5">
         <button
           onclick={() => (modal = "reset")}
-          class="flex w-full items-center gap-2.5 rounded-2xl bg-white px-[17px] py-[11px] text-left shadow-sm hover:bg-rose-50/40 hover:border-rose-100 active:bg-rose-50 active:scale-[.99] transition-all duration-150"
+          class="flex w-full items-center gap-2.5 rounded-2xl bg-white px-4.25 py-2.75 text-left shadow-sm hover:bg-rose-50/40 hover:border-rose-100 active:bg-rose-50 active:scale-[.99] transition-all duration-150"
           ><div
             class="grid size-8 place-items-center rounded-2xl bg-rose-50 text-rose-600"
           >
@@ -1267,14 +1267,14 @@
       sheet = null;
     }}
   >
-    <div class="grid grid-cols-2 rounded-2xl bg-slate-100 p-[5px]">
+    <div class="grid grid-cols-2 rounded-2xl bg-slate-100 p-1.25">
       <button
         disabled={localProfile.fluidRestrictionByDoctor}
         onclick={() => {
           localSettings.targetMode = "automatic";
           localSettings = { ...localSettings };
         }}
-        class="rounded-xl py-[11px] text-[14px] font-semibold {localSettings.targetMode ===
+        class="rounded-xl py-2.75 text-[14px] font-semibold {localSettings.targetMode ===
         'automatic'
           ? 'bg-white shadow-sm'
           : 'text-slate-500'} disabled:opacity-40">{i18n.t("target_mode_auto")}</button
@@ -1285,14 +1285,14 @@
           localSettings.manualTargetMl = localSettings.manualTargetMl ?? 2000;
           localSettings = { ...localSettings };
         }}
-        class="rounded-xl py-[11px] text-[14px] font-semibold {localSettings.targetMode ===
+        class="rounded-xl py-2.75 text-[14px] font-semibold {localSettings.targetMode ===
         'manual'
           ? 'bg-white shadow-sm'
           : 'text-slate-500'}">{i18n.t("target_mode_manual")}</button
       >
     </div>
     {#if localSettings.targetMode === "manual"}<div
-        class="mt-3 flex items-center rounded-2xl border border-slate-200 px-[17px]"
+        class="mt-3 flex items-center rounded-2xl border border-slate-200 px-4.25"
       >
         <input
           type="number"
@@ -1300,7 +1300,7 @@
           inputmode="numeric"
           pattern="[0-9]*"
           bind:value={localSettings.manualTargetMl}
-          class="min-w-0 flex-1 py-[11px] text-[16px] font-bold outline-none"
+          class="min-w-0 flex-1 py-2.75 text-[16px] font-bold outline-none"
         /><span class="text-[14px] text-slate-400">{i18n.t("unit_ml_per_day")}</span>
       </div>{/if}
     <button
@@ -1310,7 +1310,7 @@
       }}
       disabled={localSettings.targetMode === "manual" &&
         (!localSettings.manualTargetMl || localSettings.manualTargetMl <= 0)}
-      class="mt-4 w-full rounded-2xl bg-water-500 py-[11px] text-[16px] font-bold text-white shadow-lg shadow-blue-500/20 active:scale-[.99] disabled:opacity-40"
+      class="mt-4 w-full rounded-2xl bg-water-500 py-2.75 text-[16px] font-bold text-white shadow-lg shadow-blue-500/20 active:scale-[.99] disabled:opacity-40"
       >{i18n.t("save")}</button
     >
   </BottomSheet>
@@ -1325,7 +1325,7 @@
   >
     <TimeSelect bind:value={localSettings.wakeTime} label={i18n.t("sheet_wake_title")} hourLabel={i18n.t("hours")} minuteLabel={i18n.t("minutes")} />
     {#if !scheduleValid}<p
-        class="mt-3 rounded-2xl bg-amber-50 px-[13px] py-[9px] text-[14px] text-amber-800"
+        class="mt-3 rounded-2xl bg-amber-50 px-3.25 py-2.25 text-[14px] text-amber-800"
       >
         {i18n.t("schedule_invalid_msg")}
       </p>{/if}
@@ -1335,7 +1335,7 @@
         await saveSettingsNow();
         sheet = null;
       }}
-      class="mt-4 w-full rounded-2xl bg-water-500 py-[11px] text-[16px] font-bold text-white shadow-lg shadow-blue-500/20 active:scale-[.99] disabled:opacity-40"
+      class="mt-4 w-full rounded-2xl bg-water-500 py-2.75 text-[16px] font-bold text-white shadow-lg shadow-blue-500/20 active:scale-[.99] disabled:opacity-40"
       >{i18n.t("save")}</button
     >
   </BottomSheet>
@@ -1350,7 +1350,7 @@
   >
     <TimeSelect bind:value={localSettings.sleepTime} label={i18n.t("sheet_sleep_title")} hourLabel={i18n.t("hours")} minuteLabel={i18n.t("minutes")} />
     {#if !scheduleValid}<p
-        class="mt-3 rounded-2xl bg-amber-50 px-[13px] py-[9px] text-[14px] text-amber-800"
+        class="mt-3 rounded-2xl bg-amber-50 px-3.25 py-2.25 text-[14px] text-amber-800"
       >
         {i18n.t("schedule_invalid_msg")}
       </p>{/if}
@@ -1360,7 +1360,7 @@
         await saveSettingsNow();
         sheet = null;
       }}
-      class="mt-4 w-full rounded-2xl bg-water-500 py-[11px] text-[16px] font-bold text-white shadow-lg shadow-blue-500/20 active:scale-[.99] disabled:opacity-40"
+      class="mt-4 w-full rounded-2xl bg-water-500 py-2.75 text-[16px] font-bold text-white shadow-lg shadow-blue-500/20 active:scale-[.99] disabled:opacity-40"
       >{i18n.t("save")}</button
     >
   </BottomSheet>
@@ -1438,7 +1438,7 @@
       class="mt-1.5 flex items-center justify-between text-[12px] text-slate-400"
     >
       <span>{i18n.t("export_filename_label")}</span>
-      <span class="max-w-[180px] truncate font-semibold text-slate-600"
+      <span class="max-w-45 truncate font-semibold text-slate-600"
         >{backupFileName}</span
       >
     </div>

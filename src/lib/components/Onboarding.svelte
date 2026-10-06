@@ -271,9 +271,9 @@
 <svelte:window ontouchstart={handleTouchStart} ontouchend={handleTouchEnd} />
 
 <div
-  class="app-shell flex h-full min-h-0 flex-col px-[17px] safe-top safe-bottom"
+  class="app-shell flex h-full min-h-0 flex-col px-4.25 safe-top safe-bottom"
 >
-  <div class="shrink-0 pt-[5px]">
+  <div class="shrink-0 pt-1.25">
     <div class="flex items-center gap-2.5">
       <button
         onclick={back}
@@ -309,10 +309,10 @@
   <div
     bind:this={scrollContainer}
     use:preventBoundaryOverscroll
-    class="onboarding-scroll min-h-0 flex-1 overflow-y-auto overflow-x-hidden py-[13px]"
+    class="onboarding-scroll min-h-0 flex-1 overflow-y-auto overflow-x-hidden py-3.25"
   >
     <div
-      class="mx-auto flex min-h-full w-full max-w-[360px] flex-col justify-start py-[5px] sm:justify-center"
+      class="mx-auto flex min-h-full w-full max-w-90 flex-col justify-start py-1.25 sm:justify-center"
     >
       {#if currentStep === "welcome"}
         <h1 class="mt-2 text-[28px] font-bold leading-[1.12] tracking-[-.04em]">
@@ -403,7 +403,7 @@
           {#each userTypes as item}
             <button
               onclick={() => selectUserType(item.id)}
-              class="flex w-full items-start gap-2.5 rounded-2xl border px-[17px] py-[11px] text-left transition {optionClass(
+              class="flex w-full items-start gap-2.5 rounded-2xl border px-4.25 py-2.75 text-left transition {optionClass(
                 profile.userType === item.id,
               )}"
             >
@@ -457,7 +457,7 @@
                   profile = { ...profile };
                   e.currentTarget.blur();
                 }}
-                class="w-full rounded-2xl border border-slate-200 bg-white pl-[17px] pr-[41px] py-[11px] text-[16px] font-semibold outline-none focus:border-water-500 transition-colors duration-150"
+                class="w-full rounded-2xl border border-slate-200 bg-white pl-4.25 pr-10.25 py-2.75 text-[16px] font-semibold outline-none focus:border-water-500 transition-colors duration-150"
               >
                 {#each ageOptions as item}
                   <option value={item}>{item}</option>
@@ -475,9 +475,9 @@
                     profile.age.value = 1;
                   }
                   profile = { ...profile };
-                  (e.currentTarget as HTMLSelectElement)?.blur();
+                  e.currentTarget.blur();
                 }}
-                class="w-full rounded-2xl border border-slate-200 bg-white pl-[17px] pr-[41px] py-[11px] text-[16px] font-semibold outline-none focus:border-water-500 transition-colors duration-150"
+                class="w-full rounded-2xl border border-slate-200 bg-white pl-4.25 pr-10.25 py-2.75 text-[16px] font-semibold outline-none focus:border-water-500 transition-colors duration-150"
               >
                 <option value="years">{isEnglish ? "years" : "tahun"}</option>
                 <option value="months">{isEnglish ? "months" : "bulan"}</option>
@@ -496,7 +496,7 @@
                 }}
                 disabled={profile.userType === "pregnant" ||
                   profile.userType === "breastfeeding"}
-                class="min-h-[46px] rounded-2xl border px-[13px] py-[9px] text-[16px] font-semibold {profile.sex ===
+                class="min-h-11.5 rounded-2xl border px-3.25 py-2.25 text-[16px] font-semibold {profile.sex ===
                 'male'
                   ? 'border-water-500 bg-water-50 text-water-600'
                   : 'border-slate-200 bg-white text-slate-700'} disabled:opacity-40"
@@ -507,7 +507,7 @@
                   profile.sex = "female";
                   profile = { ...profile };
                 }}
-                class="min-h-[46px] rounded-2xl border px-[13px] py-[9px] text-[16px] font-semibold {profile.sex ===
+                class="min-h-11.5 rounded-2xl border px-3.25 py-2.25 text-[16px] font-semibold {profile.sex ===
                 'female'
                   ? 'border-water-500 bg-water-50 text-water-600'
                   : 'border-slate-200 bg-white text-slate-700'}"
@@ -526,9 +526,9 @@
                   const val = e.currentTarget.value;
                   profile.weightKg = val === "" ? null : Number(val);
                   profile = { ...profile };
-                  (e.currentTarget as HTMLSelectElement)?.blur();
+                  e.currentTarget.blur();
                 }}
-                class="w-full rounded-2xl border border-slate-200 bg-white pl-[17px] pr-[41px] py-[11px] text-[16px] font-semibold outline-none focus:border-water-500 transition-colors duration-150"
+                class="w-full rounded-2xl border border-slate-200 bg-white pl-4.25 pr-10.25 py-2.75 text-[16px] font-semibold outline-none focus:border-water-500 transition-colors duration-150"
               >
                 <option value="">{isEnglish ? "Not specified" : "Tidak diisi"}</option>
                 {#each weightOptions as item}
@@ -538,7 +538,7 @@
             </div></label
           >
           <p
-            class="rounded-2xl bg-slate-100 px-[17px] py-[11px] text-[14px] leading-6 text-slate-500"
+            class="rounded-2xl bg-slate-100 px-4.25 py-2.75 text-[14px] leading-6 text-slate-500"
           >
             {isEnglish
               ? "Height is not required as it is not needed for the primary calculation standard."
@@ -558,7 +558,7 @@
           {#each restrictionOptions as item}
             <button
               onclick={() => setRestriction(item.value)}
-              class="flex w-full items-start gap-2.5 rounded-2xl border px-[17px] py-[11px] text-left {optionClass(
+              class="flex w-full items-start gap-2.5 rounded-2xl border px-4.25 py-2.75 text-left {optionClass(
                 profile.fluidRestrictionByDoctor === item.value,
               )}"
             >
@@ -596,7 +596,7 @@
               >{isEnglish ? "Target prescribed by healthcare provider" : "Target dari tenaga kesehatan"}</span
             >
             <div
-              class="flex items-center rounded-2xl border border-slate-200 bg-white px-[17px]"
+              class="flex items-center rounded-2xl border border-slate-200 bg-white px-4.25"
             >
               <input
                 type="number"
@@ -604,7 +604,7 @@
                 inputmode="numeric"
                 pattern="[0-9]*"
                 bind:value={settings.manualTargetMl}
-                class="min-w-0 flex-1 bg-transparent py-[11px] text-[16px] font-semibold outline-none"
+                class="min-w-0 flex-1 bg-transparent py-2.75 text-[16px] font-semibold outline-none"
               /><span class="text-[14px] text-slate-400">{isEnglish ? "ml/day" : "ml/hari"}</span>
             </div></label
           >
@@ -626,7 +626,7 @@
                   trimester === 1 ? 1 : trimester === 2 ? 2 : 3;
                 profile = { ...profile };
               }}
-              class="rounded-2xl border px-[17px] py-[11px] text-left text-[16px] font-semibold {optionClass(
+              class="rounded-2xl border px-4.25 py-2.75 text-left text-[16px] font-semibold {optionClass(
                 profile.pregnancyTrimester === trimester,
               )}">Trimester {trimester}</button
             >
@@ -647,7 +647,7 @@
               profile.lactationPeriod = "month_0_6";
               profile = { ...profile };
             }}
-            class="rounded-2xl border px-[17px] py-[11px] text-left {optionClass(
+            class="rounded-2xl border px-4.25 py-2.75 text-left {optionClass(
               profile.lactationPeriod === 'month_0_6',
             )}"
             ><span class="block text-[16px] font-semibold">{isEnglish ? "0–6 months" : "0–6 bulan"}</span><span
@@ -660,7 +660,7 @@
               profile.lactationPeriod = "month_7_12";
               profile = { ...profile };
             }}
-            class="rounded-2xl border px-[17px] py-[11px] text-left {optionClass(
+            class="rounded-2xl border px-4.25 py-2.75 text-left {optionClass(
               profile.lactationPeriod === 'month_7_12',
             )}"
             ><span class="block text-[16px] font-semibold">{isEnglish ? "7–12 months" : "7–12 bulan"}</span
@@ -693,18 +693,18 @@
             minuteLabel={isEnglish ? "Minutes" : "Menit"}
           />
           {#if !scheduleValid}<div
-              class="rounded-2xl bg-amber-50 px-[17px] py-[11px] text-[14px] leading-6 text-amber-800"
+              class="rounded-2xl bg-amber-50 px-4.25 py-2.75 text-[14px] leading-6 text-amber-800"
             >
               {isEnglish
                 ? "Start time and end time cannot be identical."
                 : "Waktu mulai dan waktu selesai tidak boleh sama."}
             </div>{/if}
-          <div class="rounded-2xl bg-water-50 p-[13px]">
+          <div class="rounded-2xl bg-water-50 p-3.25">
             <div class="flex gap-2.5">
               <div
                 class="grid size-8 shrink-0 place-items-center rounded-full bg-white text-water-600"
               >
-                <Icon name="bell" className="size-[18px]" />
+                <Icon name="bell" className="size-4.5" />
               </div>
               <div>
                 <p class="text-[16px] font-semibold text-slate-800">
@@ -729,7 +729,7 @@
             : "Berikut ringkasan awal. Semua dapat diubah dari Pengaturan."}
         </p>
         <div class="mt-6 overflow-hidden rounded-2xl bg-white shadow-sm">
-          <div class="flex items-center justify-between px-[17px] py-[11px]">
+          <div class="flex items-center justify-between px-4.25 py-2.75">
             <span class="text-[14px] text-slate-400"
               >{isEnglish ? "Plain water goal" : "Target air putih"}</span
             ><strong class="text-[16px]"
@@ -740,7 +740,7 @@
                   : "Mode khusus"}</strong
             >
           </div>
-          <div class="border-t border-slate-100 px-[17px] py-[11px]">
+          <div class="border-t border-slate-100 px-4.25 py-2.75">
             <p class="text-[12px] text-slate-400">{isEnglish ? "Method" : "Metode"}</p>
             <p class="mt-1 text-[16px] font-semibold">
               {isEnglish
@@ -757,7 +757,7 @@
             </p>
           </div>
           {#if preview.totalWaterReferenceMl}<div
-              class="border-t border-slate-100 px-[17px] py-[11px]"
+              class="border-t border-slate-100 px-4.25 py-2.75"
             >
               <p class="text-[12px] text-slate-400"
                 >{isEnglish ? "Total fluid reference" : "Referensi total air"}</p
@@ -768,7 +768,7 @@
             </div>{/if}
         </div>
         {#if preview.warnings.length}<div
-            class="mt-3 rounded-2xl bg-slate-100 px-[17px] py-[11px]"
+            class="mt-3 rounded-2xl bg-slate-100 px-4.25 py-2.75"
           >
             <p class="text-[14px] leading-6 text-slate-500">
               {formatWarning(preview.warnings[0], isEnglish)}
@@ -779,7 +779,7 @@
   </div>
 
   <div
-    class="mx-auto w-full max-w-[360px] shrink-0 border-t border-slate-200/70 bg-[#F2F2F7]/95 pb-[5px] pt-[13px] backdrop-blur-xl"
+    class="mx-auto w-full max-w-90 shrink-0 border-t border-slate-200/70 bg-[#F2F2F7]/95 pb-1.25 pt-3.25 backdrop-blur-xl"
   >
     <button
       onclick={next}
@@ -788,7 +788,7 @@
           profile.fluidRestrictionByDoctor &&
           (!settings.manualTargetMl || settings.manualTargetMl <= 0)) ||
         (currentStep === "schedule" && !scheduleValid)}
-      class="min-h-[46px] w-full rounded-2xl bg-water-500 px-[17px] py-[9px] text-[16px] font-bold text-white shadow-lg shadow-blue-500/20 hover:bg-water-600 active:scale-[.97] transition-all duration-150 disabled:opacity-50"
+      class="min-h-11.5 w-full rounded-2xl bg-water-500 px-4.25 py-2.25 text-[16px] font-bold text-white shadow-lg shadow-blue-500/20 hover:bg-water-600 active:scale-[.97] transition-all duration-150 disabled:opacity-50"
     >
       {submitting
         ? isEnglish

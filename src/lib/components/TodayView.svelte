@@ -307,21 +307,21 @@
             {#if day.isToday}
               <!-- Style 2: Hari ini -->
               <div
-                class="size-[34px] rounded-full bg-blue-600 text-white font-bold text-[14px] grid place-items-center"
+                class="size-8.5 rounded-full bg-blue-600 text-white font-bold text-[14px] grid place-items-center"
               >
                 {day.dateNumber}
               </div>
             {:else if day.isPastReached90}
               <!-- Style 1: Hari kemarin di mana target terpenuhi > 90% (Solid blue circle with white text) -->
               <div
-                class="size-[34px] rounded-full bg-blue-600 text-white font-bold text-[14px] grid place-items-center"
+                class="size-8.5 rounded-full bg-blue-600 text-white font-bold text-[14px] grid place-items-center"
               >
                 {day.dateNumber}
               </div>
             {:else}
               <!-- Style 3: Hari lainnya (Plain text number) -->
               <div
-                class="size-[34px] grid place-items-center text-[14px] {day.isSelected
+                class="size-8.5 grid place-items-center text-[14px] {day.isSelected
                   ? 'font-bold text-slate-900'
                   : 'font-medium text-slate-500'}"
               >
@@ -342,14 +342,14 @@
   </div>
 
   {#if hydration.status === "infant_exclusive"}
-    <section class="mx-4 mt-5 rounded-2xl bg-white p-[13px] shadow-sm">
+    <section class="mx-4 mt-5 rounded-2xl bg-white p-3.25 shadow-sm">
       <h2 class="text-[20px] font-bold">{i18n.t("today_infant_title")}</h2>
       <p class="mt-2 text-[14px] leading-6 text-slate-500">
         {i18n.t("today_infant_desc")}
       </p>
     </section>
   {:else if hydration.status === "caregiver_information"}
-    <section class="mx-4 mt-5 rounded-2xl bg-white p-[13px] shadow-sm">
+    <section class="mx-4 mt-5 rounded-2xl bg-white p-3.25 shadow-sm">
       <p class="text-[12px] font-semibold text-water-600">{i18n.t("today_caregiver_badge")}</p>
       <h2 class="mt-1 text-[28px] font-bold">
         {hydration.caregiverPlainWaterRangeMl?.[0]}–{hydration
@@ -361,7 +361,7 @@
     </section>
   {:else}
     <section
-      class="mx-4 mt-3.5 rounded-2xl border border-slate-100/80 bg-white p-[13px] shadow-sm"
+      class="mx-4 mt-3.5 rounded-2xl border border-slate-100/80 bg-white p-3.25 shadow-sm"
     >
       {#if !isViewingToday}
         <div
@@ -380,7 +380,7 @@
         </div>
       {/if}
 
-      <div class="relative mx-auto size-[200px]">
+      <div class="relative mx-auto size-50">
         <svg class="size-full -rotate-90" viewBox="0 0 200 200">
           <defs>
             <linearGradient
@@ -417,7 +417,7 @@
         </svg>
         <div class="absolute inset-0 grid place-items-center text-center">
           <div>
-            <div class="text-[32px] font-bold tracking-[-.05em]">
+            <div class="text-[32px] font-bold tracking-tighter">
               {currentConsumedMl.toLocaleString(i18n.dateLocale)}
               <span class="text-[16px] font-semibold text-slate-500">ml</span>
             </div>
@@ -445,7 +445,7 @@
         <div class="mt-5 flex gap-1.5">
           <button
             onclick={() => handleAdd(quickAddMl, "quick")}
-            class="min-h-[44px] w-full rounded-2xl bg-water-500 px-[13px] py-[9px] text-[16px] font-semibold text-white shadow-lg shadow-blue-500/20 hover:bg-water-600 active:scale-[.97] transition-all duration-350 cursor-pointer"
+            class="min-h-11 w-full rounded-2xl bg-water-500 px-3.25 py-2.25 text-[16px] font-semibold text-white shadow-lg shadow-blue-500/20 hover:bg-water-600 active:scale-[.97] transition-all duration-350 cursor-pointer"
             >+ {quickAddMl} ml</button
           >
           <button
@@ -453,9 +453,9 @@
               customAmount = quickAddMl;
               showCustom = true;
             }}
-            class="min-h-[44px] shrink-0 flex items-center justify-center gap-1.5 rounded-2xl border border-blue-200 bg-blue-50/70 px-4 py-[9px] text-[16px] font-semibold text-blue-600 shadow-sm hover:bg-blue-100/60 hover:border-blue-300 active:scale-[.97] transition-all duration-200 cursor-pointer"
+            class="min-h-11 shrink-0 flex items-center justify-center gap-1.5 rounded-2xl border border-blue-200 bg-blue-50/70 px-4 py-2.25 text-[16px] font-semibold text-blue-600 shadow-sm hover:bg-blue-100/60 hover:border-blue-300 active:scale-[.97] transition-all duration-200 cursor-pointer"
           >
-            <Icon name="sliders" className="size-[18px] text-blue-600" />
+            <Icon name="sliders" className="size-4.5 text-blue-600" />
             <span>{i18n.t("today_btn_custom")}</span>
           </button>
         </div>
@@ -487,7 +487,7 @@
 
   {#if currentEntries.length > 0 || !dismissedEmptyNotice}
     <section class="mx-4 mt-6">
-      <div class="mb-2 flex items-end justify-between px-[5px]">
+      <div class="mb-2 flex items-end justify-between px-1.25">
         <h2 class="text-[16px] font-bold">
           {isViewingToday
             ? i18n.t("today_intakes_title")
@@ -502,14 +502,14 @@
           {#each [...currentEntries].reverse().slice(0, 8) as entry (entry.id)}
             <div
               transition:smoothSlideFade={{ duration: 350 }}
-              class="mb-2.5 flex items-center gap-2.5 rounded-2xl border border-slate-100/80 bg-white px-[17px] py-[14px] shadow-sm"
+              class="mb-2.5 flex items-center gap-2.5 rounded-2xl border border-slate-100/80 bg-white px-4.25 py-3.5 shadow-sm"
             >
               <div
                 class="grid size-8 shrink-0 place-items-center rounded-full bg-water-50 text-water-600"
               >
                 <Icon
                   name={getPortionIcon(entry.amountMl)}
-                  className="size-[18px]"
+                  className="size-4.5"
                 />
               </div>
               <div class="min-w-0 flex-1">
@@ -525,7 +525,7 @@
               >
               <button
                 onclick={() => onDelete(entry.id)}
-                class="rounded-full p-[9px] text-slate-300 hover:bg-rose-50 hover:text-rose-600 active:scale-90 transition-all duration-250 cursor-pointer"
+                class="rounded-full p-2.25 text-slate-300 hover:bg-rose-50 hover:text-rose-600 active:scale-90 transition-all duration-250 cursor-pointer"
                 aria-label={i18n.t("today_delete_record_aria")}>×</button
               >
             </div>
@@ -534,7 +534,7 @@
       {:else}
         <div
           transition:slide={{ duration: 350, easing: cubicOut }}
-          class="flex items-center gap-3 rounded-2xl border border-slate-100/80 bg-white p-[14px] shadow-sm"
+          class="flex items-center gap-3 rounded-2xl border border-slate-100/80 bg-white p-3.5 shadow-sm"
         >
           <div
             class="grid size-9 shrink-0 place-items-center rounded-full bg-slate-100 text-slate-500"
@@ -630,7 +630,7 @@
         >{i18n.t("quick_add_custom_label")}</span
       >
       <div
-        class="flex items-center rounded-2xl border border-slate-200 bg-white px-[17px]"
+        class="flex items-center rounded-2xl border border-slate-200 bg-white px-4.25"
       >
         <input
           type="number"
@@ -638,7 +638,7 @@
           inputmode="numeric"
           pattern="[0-9]*"
           bind:value={customAmount}
-          class="min-w-0 flex-1 py-[11px] text-[16px] font-bold outline-none"
+          class="min-w-0 flex-1 py-2.75 text-[16px] font-bold outline-none"
         />
         <span class="text-[14px] text-slate-400">ml</span>
       </div>
@@ -647,7 +647,7 @@
     <button
       onclick={saveQuickAdd}
       disabled={!customAmount || customAmount <= 0}
-      class="mt-4 w-full rounded-2xl bg-water-500 py-[11px] text-[16px] font-bold text-white shadow-lg shadow-blue-500/20 active:scale-[.99] disabled:opacity-40"
+      class="mt-4 w-full rounded-2xl bg-water-500 py-2.75 text-[16px] font-bold text-white shadow-lg shadow-blue-500/20 active:scale-[.99] disabled:opacity-40"
       >{i18n.t("save")}</button
     >
   </BottomSheet>

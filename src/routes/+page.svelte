@@ -522,7 +522,7 @@
 {#if loading}
   <div class="app-shell grid min-h-screen place-items-center"><div class="text-center"><div class="mx-auto size-8 animate-spin rounded-full border-2 border-slate-200 border-t-water-500"></div><p class="mt-4 text-[14px] text-slate-400">{i18n.isEnglish ? "Loading local data…" : "Membuka data lokal…"}</p></div></div>
 {:else if fatalError}
-  <div class="app-shell safe-top px-5"><div class="mt-10 rounded-[24px] bg-white p-5 shadow-sm"><h1 class="text-[20px] font-bold">{i18n.isEnglish ? "Application failed to open" : "Aplikasi gagal dibuka"}</h1><p class="mt-2 text-[14px] leading-6 text-slate-500">{fatalError}</p></div></div>
+  <div class="app-shell safe-top px-5"><div class="mt-10 rounded-3xl bg-white p-5 shadow-sm"><h1 class="text-[20px] font-bold">{i18n.isEnglish ? "Application failed to open" : "Aplikasi gagal dibuka"}</h1><p class="mt-2 text-[14px] leading-6 text-slate-500">{fatalError}</p></div></div>
 {:else if !meta?.onboardingCompleted || !profile || !settings}
   <Onboarding onComplete={finishOnboarding}/>
 {:else if hydration && targetRecord}

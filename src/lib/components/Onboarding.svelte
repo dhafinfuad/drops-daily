@@ -455,7 +455,7 @@
                 onchange={(e) => {
                   profile.age.value = Number(e.currentTarget.value);
                   profile = { ...profile };
-                  (e.currentTarget as HTMLSelectElement)?.blur();
+                  e.currentTarget.blur();
                 }}
                 class="w-full rounded-2xl border border-slate-200 bg-white pl-[17px] pr-[41px] py-[11px] text-[16px] font-semibold outline-none focus:border-water-500 transition-colors duration-150"
               >

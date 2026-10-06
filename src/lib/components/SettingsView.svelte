@@ -282,7 +282,11 @@
       else await onDisablePush();
     } catch (error) {
       pushMessage =
-        error instanceof Error ? error.message : (i18n.isEnglish ? "Push operation failed." : "Operasi push gagal.");
+        error instanceof Error
+          ? error.message
+          : i18n.isEnglish
+            ? "Push operation failed."
+            : "Operasi push gagal.";
     } finally {
       busyPush = false;
     }
@@ -613,7 +617,9 @@
                 onblur={saveProfileAndSettingsNow}
                 class="min-w-0 flex-1 py-2.75 text-[16px] font-semibold outline-none"
               />
-              <span class="text-[14px] text-slate-400">{i18n.t("unit_ml_per_day")}</span>
+              <span class="text-[14px] text-slate-400"
+                >{i18n.t("unit_ml_per_day")}</span
+              >
             </div>
           </label>
         {/if}
@@ -694,7 +700,9 @@
                 ? 'text-emerald-600'
                 : 'text-slate-400'}"
             >
-              {meta.storagePersistent ? i18n.t("data_storage_active") : i18n.t("data_storage_browser")}
+              {meta.storagePersistent
+                ? i18n.t("data_storage_active")
+                : i18n.t("data_storage_browser")}
             </span>
           </div>
         </div>
@@ -740,7 +748,9 @@
           >
             {i18n.t("formula_step1_badge")}
           </p>
-          <h2 class="mt-2 text-[16px] font-bold">{i18n.t("formula_step1_title")}</h2>
+          <h2 class="mt-2 text-[16px] font-bold">
+            {i18n.t("formula_step1_title")}
+          </h2>
           <p class="mt-2 text-[14px] leading-6 text-slate-500">
             {i18n.t("formula_step1_desc")}
           </p>
@@ -748,73 +758,85 @@
             <div
               class="grid grid-cols-[1fr_auto] gap-2.5 bg-slate-50 px-4.25 py-2.75 text-[12px] font-semibold text-slate-400"
             >
-              <span>{i18n.t("formula_col_group")}</span><span>{i18n.t("unit_ml_per_day")}</span>
-            </div>
-            <div
-              class="grid grid-cols-[1fr_auto] gap-2.5 border-t border-slate-100 px-4.25 py-2.75 text-[14px]"
-            >
-              <span>{i18n.t("formula_age_0_5_months")}</span><strong class="font-semibold">700</strong>
-            </div>
-            <div
-              class="grid grid-cols-[1fr_auto] gap-2.5 border-t border-slate-100 px-4.25 py-2.75 text-[14px]"
-            >
-              <span>{i18n.t("formula_age_6_11_months")}</span><strong class="font-semibold">900</strong>
-            </div>
-            <div
-              class="grid grid-cols-[1fr_auto] gap-2.5 border-t border-slate-100 px-4.25 py-2.75 text-[14px]"
-            >
-              <span>{i18n.t("formula_age_1_3_years")}</span><strong class="font-semibold">1.150</strong>
-            </div>
-            <div
-              class="grid grid-cols-[1fr_auto] gap-2.5 border-t border-slate-100 px-4.25 py-2.75 text-[14px]"
-            >
-              <span>{i18n.t("formula_age_4_6_years")}</span><strong class="font-semibold">1.450</strong>
-            </div>
-            <div
-              class="grid grid-cols-[1fr_auto] gap-2.5 border-t border-slate-100 px-4.25 py-2.75 text-[14px]"
-            >
-              <span>{i18n.t("formula_age_7_9_years")}</span><strong class="font-semibold">1.650</strong>
-            </div>
-            <div
-              class="grid grid-cols-[1fr_auto] gap-2.5 border-t border-slate-100 px-4.25 py-2.75 text-[14px]"
-            >
-              <span>{i18n.t("formula_age_10_12_years")}</span><strong class="font-semibold"
-                >1.850</strong
+              <span>{i18n.t("formula_col_group")}</span><span
+                >{i18n.t("unit_ml_per_day")}</span
               >
             </div>
             <div
               class="grid grid-cols-[1fr_auto] gap-2.5 border-t border-slate-100 px-4.25 py-2.75 text-[14px]"
             >
-              <span>{i18n.t("formula_age_13_15_years")}</span><strong class="font-semibold"
-                >2.100</strong
+              <span>{i18n.t("formula_age_0_5_months")}</span><strong
+                class="font-semibold">700</strong
               >
             </div>
             <div
               class="grid grid-cols-[1fr_auto] gap-2.5 border-t border-slate-100 px-4.25 py-2.75 text-[14px]"
             >
-              <span>{i18n.t("formula_age_16_18_years")}</span><strong class="font-semibold"
-                >2.300 / 2.150</strong
+              <span>{i18n.t("formula_age_6_11_months")}</span><strong
+                class="font-semibold">900</strong
               >
             </div>
             <div
               class="grid grid-cols-[1fr_auto] gap-2.5 border-t border-slate-100 px-4.25 py-2.75 text-[14px]"
             >
-              <span>{i18n.t("formula_age_19_64_years")}</span><strong class="font-semibold"
-                >2.500 / 2.350</strong
+              <span>{i18n.t("formula_age_1_3_years")}</span><strong
+                class="font-semibold">1.150</strong
               >
             </div>
             <div
               class="grid grid-cols-[1fr_auto] gap-2.5 border-t border-slate-100 px-4.25 py-2.75 text-[14px]"
             >
-              <span>{i18n.t("formula_age_65_80_years")}</span><strong class="font-semibold"
-                >1.800 / 1.550</strong
+              <span>{i18n.t("formula_age_4_6_years")}</span><strong
+                class="font-semibold">1.450</strong
               >
             </div>
             <div
               class="grid grid-cols-[1fr_auto] gap-2.5 border-t border-slate-100 px-4.25 py-2.75 text-[14px]"
             >
-              <span>{i18n.t("formula_age_gt_80_years")}</span><strong class="font-semibold"
-                >1.600 / 1.400</strong
+              <span>{i18n.t("formula_age_7_9_years")}</span><strong
+                class="font-semibold">1.650</strong
+              >
+            </div>
+            <div
+              class="grid grid-cols-[1fr_auto] gap-2.5 border-t border-slate-100 px-4.25 py-2.75 text-[14px]"
+            >
+              <span>{i18n.t("formula_age_10_12_years")}</span><strong
+                class="font-semibold">1.850</strong
+              >
+            </div>
+            <div
+              class="grid grid-cols-[1fr_auto] gap-2.5 border-t border-slate-100 px-4.25 py-2.75 text-[14px]"
+            >
+              <span>{i18n.t("formula_age_13_15_years")}</span><strong
+                class="font-semibold">2.100</strong
+              >
+            </div>
+            <div
+              class="grid grid-cols-[1fr_auto] gap-2.5 border-t border-slate-100 px-4.25 py-2.75 text-[14px]"
+            >
+              <span>{i18n.t("formula_age_16_18_years")}</span><strong
+                class="font-semibold">2.300 / 2.150</strong
+              >
+            </div>
+            <div
+              class="grid grid-cols-[1fr_auto] gap-2.5 border-t border-slate-100 px-4.25 py-2.75 text-[14px]"
+            >
+              <span>{i18n.t("formula_age_19_64_years")}</span><strong
+                class="font-semibold">2.500 / 2.350</strong
+              >
+            </div>
+            <div
+              class="grid grid-cols-[1fr_auto] gap-2.5 border-t border-slate-100 px-4.25 py-2.75 text-[14px]"
+            >
+              <span>{i18n.t("formula_age_65_80_years")}</span><strong
+                class="font-semibold">1.800 / 1.550</strong
+              >
+            </div>
+            <div
+              class="grid grid-cols-[1fr_auto] gap-2.5 border-t border-slate-100 px-4.25 py-2.75 text-[14px]"
+            >
+              <span>{i18n.t("formula_age_gt_80_years")}</span><strong
+                class="font-semibold">1.600 / 1.400</strong
               >
             </div>
           </div>
@@ -826,20 +848,27 @@
           >
             {i18n.t("formula_step2_badge")}
           </p>
-          <h2 class="mt-2 text-[16px] font-bold">{i18n.t("formula_step2_title")}</h2>
+          <h2 class="mt-2 text-[16px] font-bold">
+            {i18n.t("formula_step2_title")}
+          </h2>
           <div class="mt-3 space-y-3 text-[14px] leading-6 text-slate-500">
             <p>
-              <strong class="font-semibold text-slate-800">{i18n.t("formula_pregnant")}</strong> {i18n.t("formula_pregnant_desc")}
+              <strong class="font-semibold text-slate-800"
+                >{i18n.t("formula_pregnant")}</strong
+              >
+              {i18n.t("formula_pregnant_desc")}
             </p>
             <p>
               <strong class="font-semibold text-slate-800"
                 >{i18n.t("formula_breastfeeding_0_6")}</strong
-              > {i18n.t("formula_breastfeeding_0_6_desc")}
+              >
+              {i18n.t("formula_breastfeeding_0_6_desc")}
             </p>
             <p>
               <strong class="font-semibold text-slate-800"
                 >{i18n.t("formula_breastfeeding_7_12")}</strong
-              > {i18n.t("formula_breastfeeding_7_12_desc")}
+              >
+              {i18n.t("formula_breastfeeding_7_12_desc")}
             </p>
           </div>
         </div>
@@ -856,7 +885,9 @@
           <div
             class="mt-3 rounded-2xl bg-white px-4.25 py-2.75 text-center shadow-sm"
           >
-            <p class="text-[14px] text-slate-500">{i18n.t("formula_water_target")}</p>
+            <p class="text-[14px] text-slate-500">
+              {i18n.t("formula_water_target")}
+            </p>
             <p class="mt-2 text-[20px] font-bold tracking-[-.03em]">
               {i18n.t("formula_formula_calc")}
             </p>
@@ -873,18 +904,27 @@
         </div>
 
         <div class="rounded-2xl bg-white p-3.25 shadow-sm">
-          <h2 class="text-[16px] font-bold">{i18n.t("formula_special_rules_title")}</h2>
+          <h2 class="text-[16px] font-bold">
+            {i18n.t("formula_special_rules_title")}
+          </h2>
           <div class="mt-3 space-y-3 text-[14px] leading-6 text-slate-500">
             <p>
-              <strong class="font-semibold text-slate-800">{i18n.t("formula_rule_0_5_title")}</strong> {i18n.t("formula_rule_0_5_desc")}
+              <strong class="font-semibold text-slate-800"
+                >{i18n.t("formula_rule_0_5_title")}</strong
+              >
+              {i18n.t("formula_rule_0_5_desc")}
             </p>
             <p>
-              <strong class="font-semibold text-slate-800">{i18n.t("formula_rule_6_11_title")}</strong> {i18n.t("formula_rule_6_11_desc")}
+              <strong class="font-semibold text-slate-800"
+                >{i18n.t("formula_rule_6_11_title")}</strong
+              >
+              {i18n.t("formula_rule_6_11_desc")}
             </p>
             <p>
               <strong class="font-semibold text-slate-800"
                 >{i18n.t("formula_rule_doctor_title")}</strong
-              > {i18n.t("formula_rule_doctor_desc")}
+              >
+              {i18n.t("formula_rule_doctor_desc")}
             </p>
             <p>
               <strong class="font-semibold text-slate-800"
@@ -906,10 +946,13 @@
             </div>
             <div>
               <h2 class="text-[16px] font-bold">
-                {meta.pushEnabled ? i18n.t("push_active_title") : i18n.t("push_inactive_title")}
+                {meta.pushEnabled
+                  ? i18n.t("push_active_title")
+                  : i18n.t("push_inactive_title")}
               </h2>
               <p class="mt-2 text-[14px] leading-6 text-slate-500">
-                {i18n.t("push_permission_label")}: {pushCapability?.permission ?? i18n.t("push_not_checked")}.
+                {i18n.t("push_permission_label")}: {pushCapability?.permission ??
+                  i18n.t("push_not_checked")}.
               </p>
               {#if pushCapability && !pushCapability.standalone}<p
                   class="mt-2 text-[14px] leading-6 text-slate-500"
@@ -971,7 +1014,9 @@
               <Icon name="drop" className="size-4" />
             </div>
             <div class="flex-1">
-              <p class="text-[15px] font-semibold">{i18n.t("menu_daily_target")}</p>
+              <p class="text-[15px] font-semibold">
+                {i18n.t("menu_daily_target")}
+              </p>
               <p class="mt-1 text-[14px] text-slate-400">
                 {localSettings.targetMode === "automatic"
                   ? i18n.t("target_mode_auto")
@@ -992,7 +1037,9 @@
               <Icon name="bell" className="size-4" />
             </div>
             <div class="flex-1">
-              <p class="text-[16px] font-semibold">{i18n.t("menu_auto_reminder")}</p>
+              <p class="text-[16px] font-semibold">
+                {i18n.t("menu_auto_reminder")}
+              </p>
               <p class="mt-1 text-[14px] text-slate-400">
                 {i18n.t("menu_auto_reminder_desc")}
               </p>
@@ -1017,9 +1064,13 @@
               <Icon name="phone" className="size-4" />
             </div>
             <div class="flex-1">
-              <p class="text-[15px] font-semibold">{i18n.t("menu_notifications")}</p>
+              <p class="text-[15px] font-semibold">
+                {i18n.t("menu_notifications")}
+              </p>
               <p class="mt-1 text-[14px] text-slate-400">
-                {meta.pushEnabled ? i18n.t("push_status_active") : i18n.t("push_status_inactive")}
+                {meta.pushEnabled
+                  ? i18n.t("push_status_active")
+                  : i18n.t("push_status_inactive")}
               </p>
             </div>
             <Icon
@@ -1036,7 +1087,9 @@
               <Icon name="clock" className="size-4" />
             </div>
             <div class="flex-1">
-              <p class="text-[16px] font-semibold">{i18n.t("menu_wake_time")}</p>
+              <p class="text-[16px] font-semibold">
+                {i18n.t("menu_wake_time")}
+              </p>
               <p class="mt-1 text-[14px] text-slate-400">
                 {localSettings.wakeTime}
               </p>
@@ -1055,7 +1108,9 @@
               <Icon name="moon" className="size-4" />
             </div>
             <div class="flex-1">
-              <p class="text-[16px] font-semibold">{i18n.t("menu_sleep_time")}</p>
+              <p class="text-[16px] font-semibold">
+                {i18n.t("menu_sleep_time")}
+              </p>
               <p class="mt-1 text-[14px] text-slate-400">
                 {localSettings.sleepTime}
               </p>
@@ -1157,7 +1212,9 @@
               <Icon name="sun" className="size-4" />
             </div>
             <div class="flex-1">
-              <p class="text-[16px] font-semibold">{i18n.t("menu_environment")}</p>
+              <p class="text-[16px] font-semibold">
+                {i18n.t("menu_environment")}
+              </p>
               <p class="mt-1 text-[14px] text-slate-400">
                 {environmentLabel(localProfile.environment)}
               </p>
@@ -1207,8 +1264,12 @@
               <Icon name="database" className="size-4" />
             </div>
             <div class="flex-1">
-              <p class="text-[16px] font-semibold">{i18n.t("menu_device_data")}</p>
-              <p class="mt-1 text-[14px] text-slate-400">{i18n.t("menu_device_data_desc")}</p>
+              <p class="text-[16px] font-semibold">
+                {i18n.t("menu_device_data")}
+              </p>
+              <p class="mt-1 text-[14px] text-slate-400">
+                {i18n.t("menu_device_data_desc")}
+              </p>
             </div>
             <Icon
               name="chevron"
@@ -1225,7 +1286,9 @@
             </div>
             <div class="flex-1">
               <p class="text-[16px] font-semibold">{i18n.t("menu_privacy")}</p>
-              <p class="mt-1 text-[14px] text-slate-400">{i18n.t("menu_privacy_desc")}</p>
+              <p class="mt-1 text-[14px] text-slate-400">
+                {i18n.t("menu_privacy_desc")}
+              </p>
             </div>
             <Icon
               name="chevron"
@@ -1277,7 +1340,8 @@
         class="rounded-xl py-2.75 text-[14px] font-semibold {localSettings.targetMode ===
         'automatic'
           ? 'bg-white shadow-sm'
-          : 'text-slate-500'} disabled:opacity-40">{i18n.t("target_mode_auto")}</button
+          : 'text-slate-500'} disabled:opacity-40"
+        >{i18n.t("target_mode_auto")}</button
       >
       <button
         onclick={() => {
@@ -1301,7 +1365,9 @@
           pattern="[0-9]*"
           bind:value={localSettings.manualTargetMl}
           class="min-w-0 flex-1 py-2.75 text-[16px] font-bold outline-none"
-        /><span class="text-[14px] text-slate-400">{i18n.t("unit_ml_per_day")}</span>
+        /><span class="text-[14px] text-slate-400"
+          >{i18n.t("unit_ml_per_day")}</span
+        >
       </div>{/if}
     <button
       onclick={async () => {
@@ -1323,7 +1389,12 @@
       sheet = null;
     }}
   >
-    <TimeSelect bind:value={localSettings.wakeTime} label={i18n.t("sheet_wake_title")} hourLabel={i18n.t("hours")} minuteLabel={i18n.t("minutes")} />
+    <TimeSelect
+      bind:value={localSettings.wakeTime}
+      label={i18n.t("sheet_wake_title")}
+      hourLabel={i18n.t("hours")}
+      minuteLabel={i18n.t("minutes")}
+    />
     {#if !scheduleValid}<p
         class="mt-3 rounded-2xl bg-amber-50 px-3.25 py-2.25 text-[14px] text-amber-800"
       >
@@ -1348,7 +1419,12 @@
       sheet = null;
     }}
   >
-    <TimeSelect bind:value={localSettings.sleepTime} label={i18n.t("sheet_sleep_title")} hourLabel={i18n.t("hours")} minuteLabel={i18n.t("minutes")} />
+    <TimeSelect
+      bind:value={localSettings.sleepTime}
+      label={i18n.t("sheet_sleep_title")}
+      hourLabel={i18n.t("hours")}
+      minuteLabel={i18n.t("minutes")}
+    />
     {#if !scheduleValid}<p
         class="mt-3 rounded-2xl bg-amber-50 px-3.25 py-2.25 text-[14px] text-amber-800"
       >
@@ -1374,7 +1450,9 @@
   >
     <div class="space-y-2.5">
       {#each LANGUAGE_OPTIONS as opt}
-        {@const isSelected = (opt.id === "en" && i18n.isEnglish) || (opt.id === "id" && i18n.isIndonesian)}
+        {@const isSelected =
+          (opt.id === "en" && i18n.isEnglish) ||
+          (opt.id === "id" && i18n.isIndonesian)}
         <button
           onclick={async () => {
             await selectLanguage(opt.localeCode);
@@ -1385,18 +1463,32 @@
             : 'border-slate-200 bg-white hover:border-slate-300 hover:bg-slate-50/70'}"
         >
           <div class="flex items-center gap-3">
-            <span class="text-2xl" role="img" aria-label={opt.name}>{opt.flag}</span>
+            <span class="text-2xl" role="img" aria-label={opt.name}
+              >{opt.flag}</span
+            >
             <div>
-              <p class="text-[16px] font-semibold {isSelected ? 'text-water-900 font-bold' : 'text-slate-900'}">
+              <p
+                class="text-[16px] font-semibold {isSelected
+                  ? 'text-water-900 font-bold'
+                  : 'text-slate-900'}"
+              >
                 {opt.label}
               </p>
-              <p class="mt-0.5 text-[12px] {isSelected ? 'text-water-600' : 'text-slate-400'}">
-                {opt.id === "id" ? i18n.t("lang_id_desc") : i18n.t("lang_en_desc")}
+              <p
+                class="mt-0.5 text-[12px] {isSelected
+                  ? 'text-water-600'
+                  : 'text-slate-400'}"
+              >
+                {opt.id === "id"
+                  ? i18n.t("lang_id_desc")
+                  : i18n.t("lang_en_desc")}
               </p>
             </div>
           </div>
           {#if isSelected}
-            <div class="grid size-6 place-items-center rounded-full bg-water-500 text-white shadow-sm">
+            <div
+              class="grid size-6 place-items-center rounded-full bg-water-500 text-white shadow-sm"
+            >
               <Icon name="check" className="size-3.5" />
             </div>
           {/if}
@@ -1432,7 +1524,9 @@
   <div class="mt-3 rounded-2xl bg-slate-50 p-3 text-left">
     <div class="flex items-center justify-between text-[12px] text-slate-400">
       <span>{i18n.t("export_format_label")}</span>
-      <span class="font-semibold text-slate-600">{i18n.t("export_format_value")}</span>
+      <span class="font-semibold text-slate-600"
+        >{i18n.t("export_format_value")}</span
+      >
     </div>
     <div
       class="mt-1.5 flex items-center justify-between text-[12px] text-slate-400"
@@ -1449,7 +1543,9 @@
   open={modal === "import"}
   title={i18n.t("modal_import_title")}
   message={pendingImportFile
-    ? (i18n.isEnglish ? `File "${pendingImportFile.name}" will replace all current data.` : `File "${pendingImportFile.name}" akan menggantikan seluruh data saat ini.`)
+    ? i18n.isEnglish
+      ? `File "${pendingImportFile.name}" will replace all current data.`
+      : `File "${pendingImportFile.name}" akan menggantikan seluruh data saat ini.`
     : i18n.t("modal_import_msg")}
   confirmText={i18n.t("modal_import_confirm")}
   cancelText={i18n.t("cancel")}

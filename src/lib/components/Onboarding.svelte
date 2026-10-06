@@ -125,18 +125,32 @@
         {
           id: "pregnant" as UserType,
           label: "Pregnant",
-          description: "Includes additional intake requirements during pregnancy",
+          description:
+            "Includes additional intake requirements during pregnancy",
         },
         {
           id: "breastfeeding" as UserType,
           label: "Breastfeeding",
-          description: "Includes additional intake requirements during lactation",
+          description:
+            "Includes additional intake requirements during lactation",
         },
       ]
     : [
-        { id: "child" as UserType, label: "Anak", description: "Untuk pengguna anak" },
-        { id: "teen" as UserType, label: "Remaja", description: "Untuk usia remaja" },
-        { id: "adult" as UserType, label: "Dewasa", description: "Pilihan umum orang dewasa" },
+        {
+          id: "child" as UserType,
+          label: "Anak",
+          description: "Untuk pengguna anak",
+        },
+        {
+          id: "teen" as UserType,
+          label: "Remaja",
+          description: "Untuk usia remaja",
+        },
+        {
+          id: "adult" as UserType,
+          label: "Dewasa",
+          description: "Pilihan umum orang dewasa",
+        },
         {
           id: "older_adult" as UserType,
           label: "Lansia",
@@ -164,7 +178,8 @@
         {
           value: true,
           label: "Yes",
-          description: "Set a specific target prescribed by a healthcare professional",
+          description:
+            "Set a specific target prescribed by a healthcare professional",
         },
       ]
     : [
@@ -296,7 +311,9 @@
         type="button"
         class="inline-flex items-center gap-1 rounded-full border border-slate-200 bg-white px-2.5 py-1 text-[11px] font-semibold text-slate-700 shadow-sm hover:border-slate-300 hover:bg-slate-50 active:scale-95 transition-all"
         title={isEnglish ? "Ganti ke Bahasa Indonesia" : "Switch to English"}
-        aria-label={isEnglish ? "Switch to Indonesian" : "Ganti ke Bahasa Inggris"}
+        aria-label={isEnglish
+          ? "Switch to Indonesian"
+          : "Ganti ke Bahasa Inggris"}
       >
         <span>{isEnglish ? "🇬🇧 EN" : "🇮🇩 ID"}</span>
       </button>
@@ -316,7 +333,9 @@
     >
       {#if currentStep === "welcome"}
         <h1 class="mt-2 text-[28px] font-bold leading-[1.12] tracking-[-.04em]">
-          {isEnglish ? "Stay hydrated. Effortlessly." : "Minum cukup. Tanpa ribet."}
+          {isEnglish
+            ? "Stay hydrated. Effortlessly."
+            : "Minum cukup. Tanpa ribet."}
         </h1>
         <p class="mt-2 text-[14px] leading-5 text-slate-500">
           {isEnglish
@@ -423,14 +442,17 @@
                   item.id
                     ? 'text-blue-900'
                     : 'text-slate-900'}"
-                  >{item.label}</h3
-                ><p
+                >
+                  {item.label}
+                </h3>
+                <p
                   class="mt-1 block text-[14px] leading-5 {profile.userType ===
                   item.id
                     ? 'text-blue-700/80'
                     : 'text-slate-400'}"
-                  >{item.description}</p
-                ></span
+                >
+                  {item.description}
+                </p></span
               >
             </button>
           {/each}
@@ -517,7 +539,9 @@
           </div>
           <label class="block"
             ><span class="mb-2 block text-[14px] font-semibold text-slate-500"
-              >{isEnglish ? "Body weight (optional)" : "Berat badan (opsional)"}</span
+              >{isEnglish
+                ? "Body weight (optional)"
+                : "Berat badan (opsional)"}</span
             >
             <div class="relative">
               <select
@@ -530,7 +554,9 @@
                 }}
                 class="w-full rounded-2xl border border-slate-200 bg-white pl-4.25 pr-10.25 py-2.75 text-[16px] font-semibold outline-none focus:border-water-500 transition-colors duration-150"
               >
-                <option value="">{isEnglish ? "Not specified" : "Tidak diisi"}</option>
+                <option value=""
+                  >{isEnglish ? "Not specified" : "Tidak diisi"}</option
+                >
                 {#each weightOptions as item}
                   <option value={item}>{item} kg</option>
                 {/each}
@@ -547,7 +573,9 @@
         </div>
       {:else if currentStep === "safety"}
         <h1 class="mt-2 text-[28px] font-bold leading-[1.12] tracking-[-.04em]">
-          {isEnglish ? "Do you have medical fluid restrictions?" : "Ada batasan cairan dari dokter?"}
+          {isEnglish
+            ? "Do you have medical fluid restrictions?"
+            : "Ada batasan cairan dari dokter?"}
         </h1>
         <p class="mt-2 text-[14px] leading-5 text-slate-500">
           {isEnglish
@@ -578,14 +606,17 @@
                   item.value
                     ? 'text-blue-900'
                     : 'text-slate-900'}"
-                  >{item.label}</h3
-                ><p
+                >
+                  {item.label}
+                </h3>
+                <p
                   class="mt-1 block text-[14px] leading-5 {profile.fluidRestrictionByDoctor ===
                   item.value
                     ? 'text-blue-700/80'
                     : 'text-slate-400'}"
-                  >{item.description}</p
-                ></span
+                >
+                  {item.description}
+                </p></span
               >
             </button>
           {/each}
@@ -593,7 +624,9 @@
         {#if profile.fluidRestrictionByDoctor}
           <label class="mt-4 block"
             ><span class="mb-2 block text-[14px] font-semibold text-slate-500"
-              >{isEnglish ? "Target prescribed by healthcare provider" : "Target dari tenaga kesehatan"}</span
+              >{isEnglish
+                ? "Target prescribed by healthcare provider"
+                : "Target dari tenaga kesehatan"}</span
             >
             <div
               class="flex items-center rounded-2xl border border-slate-200 bg-white px-4.25"
@@ -605,7 +638,9 @@
                 pattern="[0-9]*"
                 bind:value={settings.manualTargetMl}
                 class="min-w-0 flex-1 bg-transparent py-2.75 text-[16px] font-semibold outline-none"
-              /><span class="text-[14px] text-slate-400">{isEnglish ? "ml/day" : "ml/hari"}</span>
+              /><span class="text-[14px] text-slate-400"
+                >{isEnglish ? "ml/day" : "ml/hari"}</span
+              >
             </div></label
           >
         {/if}
@@ -650,9 +685,12 @@
             class="rounded-2xl border px-4.25 py-2.75 text-left {optionClass(
               profile.lactationPeriod === 'month_0_6',
             )}"
-            ><span class="block text-[16px] font-semibold">{isEnglish ? "0–6 months" : "0–6 bulan"}</span><span
-              class="mt-1 block text-[14px] text-slate-400"
-              >{isEnglish ? "First six months of breastfeeding" : "Enam bulan pertama menyusui"}</span
+            ><span class="block text-[16px] font-semibold"
+              >{isEnglish ? "0–6 months" : "0–6 bulan"}</span
+            ><span class="mt-1 block text-[14px] text-slate-400"
+              >{isEnglish
+                ? "First six months of breastfeeding"
+                : "Enam bulan pertama menyusui"}</span
             ></button
           >
           <button
@@ -663,13 +701,15 @@
             class="rounded-2xl border px-4.25 py-2.75 text-left {optionClass(
               profile.lactationPeriod === 'month_7_12',
             )}"
-            ><span class="block text-[16px] font-semibold">{isEnglish ? "7–12 months" : "7–12 bulan"}</span
+            ><span class="block text-[16px] font-semibold"
+              >{isEnglish ? "7–12 months" : "7–12 bulan"}</span
             ><span class="mt-1 block text-[14px] text-slate-400"
-              >{isEnglish ? "Second six months of breastfeeding" : "Enam bulan kedua menyusui"}</span
+              >{isEnglish
+                ? "Second six months of breastfeeding"
+                : "Enam bulan kedua menyusui"}</span
             ></button
           >
         </div>
-
       {:else if currentStep === "schedule"}
         <h1 class="mt-2 text-[28px] font-bold leading-[1.12] tracking-[-.04em]">
           {isEnglish ? "When does your day start?" : "Kapan hari Anda dimulai?"}
@@ -708,7 +748,9 @@
               </div>
               <div>
                 <p class="text-[16px] font-semibold text-slate-800">
-                  {isEnglish ? "No reminders while sleeping" : "Tidak ada reminder saat tidur"}
+                  {isEnglish
+                    ? "No reminders while sleeping"
+                    : "Tidak ada reminder saat tidur"}
                 </p>
                 <p class="mt-1 text-[14px] leading-6 text-slate-500">
                   {isEnglish
@@ -741,7 +783,9 @@
             >
           </div>
           <div class="border-t border-slate-100 px-4.25 py-2.75">
-            <p class="text-[12px] text-slate-400">{isEnglish ? "Method" : "Metode"}</p>
+            <p class="text-[12px] text-slate-400">
+              {isEnglish ? "Method" : "Metode"}
+            </p>
             <p class="mt-1 text-[16px] font-semibold">
               {isEnglish
                 ? preview.calculationMethod === "kemkes_akg_2019"
@@ -759,11 +803,14 @@
           {#if preview.totalWaterReferenceMl}<div
               class="border-t border-slate-100 px-4.25 py-2.75"
             >
-              <p class="text-[12px] text-slate-400"
-                >{isEnglish ? "Total fluid reference" : "Referensi total air"}</p
-              >
+              <p class="text-[12px] text-slate-400">
+                {isEnglish ? "Total fluid reference" : "Referensi total air"}
+              </p>
               <p class="mt-1 text-[16px] font-semibold">
-                {preview.totalWaterReferenceMl.toLocaleString(isEnglish ? "en-US" : "id-ID")} {isEnglish ? "ml/day" : "ml/hari"}
+                {preview.totalWaterReferenceMl.toLocaleString(
+                  isEnglish ? "en-US" : "id-ID",
+                )}
+                {isEnglish ? "ml/day" : "ml/hari"}
               </p>
             </div>{/if}
         </div>

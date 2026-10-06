@@ -1,3 +1,4 @@
+// SvelteKit Netlify Configuration
 import adapter from "@sveltejs/adapter-netlify";
 
 const config = {
@@ -7,3 +8,4 @@ const config = {
 };
 
 export default config;
+
